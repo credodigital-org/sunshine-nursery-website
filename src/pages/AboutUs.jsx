@@ -1,21 +1,21 @@
 import React from 'react';
 import './AboutUs.css'; 
 
-import children from '../assets/aboutUsImages/children.png';
-import love from '../assets/aboutUsImages/love.png';
-import sun from '../assets/aboutUsImages/sun.png';
-import tick from '../assets/aboutUsImages/tick.png';
-import cloud from '../assets/aboutUsImages/cloud.png';
-import wave from '../assets/aboutUsImages/wave.png';
-import school from '../assets/aboutUsImages/school.png';
-import redarrow from '../assets/aboutUsImages/redarrow.png';
-import scope from '../assets/aboutUsImages/scope.png';
-import contact from '../assets/aboutUsImages/contact.png';
-import yellow from '../assets/aboutUsImages/yellow.png';
-import degree from '../assets/aboutUsImages/degree.png';
-import blue from '../assets/aboutUsImages/blue.png';
-import fam from '../assets/aboutUsImages/fam.png';
-import aswini from '../assets/aboutUsImages/aswini.png';
+import children from '../assets/AboutUsImages/children.png';
+import love from '../assets/AboutUsImages/love.png';
+import sun from '../assets/AboutUsImages/sun.png';
+import tick from '../assets/AboutUsImages/tick.png';
+import cloud from '../assets/AboutUsImages/cloud.png';
+import wave from '../assets/AboutUsImages/wave.png';
+import school from '../assets/AboutUsImages/school.png';
+import redarrow from '../assets/AboutUsImages/redarrow.png';
+import scope from '../assets/AboutUsImages/scope.png';
+import contact from '../assets/AboutUsImages/contact.png';
+import yellow from '../assets/AboutUsImages/yellow.png';
+import degree from '../assets/AboutUsImages/degree.png';
+import blue from '../assets/AboutUsImages/blue.png';
+import fam from '../assets/AboutUsImages/fam.png';
+import aswini from '../assets/AboutUsImages/aswini.png';
 
 import About from "../sections/About";
 import CTA from '../sections/CTA';

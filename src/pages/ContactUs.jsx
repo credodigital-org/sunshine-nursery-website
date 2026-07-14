@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import sun from '../assets/aboutUsImages/sun.png';
-import cloud from '../assets/aboutUsImages/cloud.png';
-import wave from '../assets/aboutUsImages/wave.png';
+import sun from '../assets/AboutUsImages/sun.png';
+import cloud from '../assets/AboutUsImages/cloud.png';
+import wave from '../assets/AboutUsImages/wave.png';
 import children from '../assets/ContactUsImages/children.png';
 import slide from '../assets/HeroImages/slide.jpg';
 import flower1 from '../assets/GalleryImages/flower1.png'; 
