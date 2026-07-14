@@ -1,0 +1,124 @@
+/* 1. MOBILE PHONES (Default Base Styles — Up to 480px) */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+#root {
+    overflow-x: hidden;
+    width: 100%;
+}
+.nav-links {
+  display: none; /* Hide desktop nav links */
+}
+
+.mobile-menu-btn {
+  display: block; /* Show hamburger button */
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #2D3748;
+  cursor: pointer;
+}
+
+.mobile-drawer {
+  display: none;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background: #FFFFFF;
+  border-top: 1px solid #F0F0F0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  z-index: 999;
+}
+.mobile-drawer.is-open {
+  display: flex;
+}
+
+.hero-section {
+  padding: 3rem 1rem;
+  background-position: 65% bottom; /* Keep background graphics visible on narrow screens */
+  background-size: cover;
+  text-align: center;
+}
+
+.hero-text-block {
+  width: 100%;
+}
+
+.hero-text-block h1 {
+  font-size: 2rem; /* Clear, legible size for small screens */
+  line-height: 1.2;
+  color: #2D3748;
+}
+
+
+/* 2. TABLETS (Portrait & Landscape — 481px to 1024px) */
+   
+@media (min-width: 481px) {
+  .hero-section {
+    padding: 5rem 2rem;
+  }
+  
+  .hero-text-block h1 {
+    font-size: 2.6rem; /* Scale up typography for larger hand-held viewports */
+  }
+}
+
+
+/* 3. LAPTOPS / SMALL DESKTOPS (1025px to 1440px) */
+@media (min-width: 1025px) {
+  /* Swap Navigation: Hide mobile elements, display sleek desktop header */
+  .mobile-menu-btn, 
+  .mobile-drawer {
+    display: none;
+  }
+  
+  .nav-links {
+    display: flex; /* Bring back standard navigation layout */
+    gap: 2rem;
+  }
+
+  /* Flip Layout: Move from stacked mobile rows to standard desktop columns */
+  .hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 7rem 4rem;
+    background-position: center right; /* Moves background graphic safely behind text space */
+  }
+
+  .hero-text-block {
+    max-width: 50%; /* Text occupies left half, graphics safely occupy right half */
+    text-align: left;
+  }
+
+  .hero-text-block h1 {
+    font-size: 3.5rem;
+  }
+}
+
+
+/* 4. LARGE WIDESCREEN MONITORS (1441px and up) */
+@media (min-width: 1441px) {
+  /* 
+    CRITICAL STEP FOR MONITORS: If you don't limit your layout width here, 
+    your text will stretch infinitely to the left and elements look broken.
+  */
+  .hero-section {
+    max-width: 1400px;
+    margin: 0 auto; /* Centers the whole container perfectly in the middle of giant displays */
+    padding: 9rem 0;
+  }
+
+  .hero-text-block h1 {
+    font-size: 4.2rem; /* Ultra-crisp, prominent sizing for massive resolutions */
+  }
+}
