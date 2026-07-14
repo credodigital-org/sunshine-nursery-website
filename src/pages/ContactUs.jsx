@@ -9,7 +9,7 @@ import callicon from '../assets/ContactUsImages/call.png';
 import emailicon from '../assets/ContactUsImages/email.png';
 import location from '../assets/ContactUsImages/location.png';
 import time from '../assets/ContactUsImages/time.png';
-import school from '../assets/aboutUsImages/school.png';
+import school from '../assets/AboutUsImages/school.png';
 import map from '../assets/ContactUsImages/map.png';
 import mapname from '../assets/ContactUsImages/mapname.png';
 
