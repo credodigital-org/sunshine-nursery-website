@@ -1,20 +1,22 @@
 import React from 'react';
+import '../sections/Admission.css';
+import './Hero.css'; 
 
-import heroIllustration from '../assets/herobackground.jpg'; 
-import wave from '../assets/wave.jpg';
+import heroIllustration from '../assets/HeroImages/herobackground.jpg'; 
+import wave from '../assets/HeroImages/wave.jpg';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   return (
     <section id="home" className="hero-section" style={{
       backgroundImage: `url(${heroIllustration})`,
-      id:"home",
       backgroundSize: 'cover',
       backgroundPosition: 'bottom center',
       backgroundRepeat: 'no-repeat',
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'center',
+      justifyContent: 'center', // Fixed: changed from justify-content
       padding: '4rem 2rem',
       margin: 0,
       maxWidth: '100vw',
@@ -22,34 +24,56 @@ export default function Hero() {
       position: 'relative',
       overflow: 'hidden'
     }}>
-      <div style={{ maxWidth: '1400px', margin: '0 auto', width: '100%', display: 'flex', justifyContent: 'flex-start', boxSizing: 'border-box',padding: '5rem' }}>
+      <div className="hero-container-inner"> 
         
-        {/* Left Side Content Overlaid on top of the image field */}
-        <div className="hero-text-block" style={{ maxWidth: '51.1875rem', height:'41rem', padding: '1rem', borderRadius: '2rem' }}>
-          <h1 style={{ fontFamily: "'Fredoka', sans-serif", fontSize: '3rem', color: '#2D3748', lineHeight: '1.2', marginBlockEnd: '1rem' }}>
-            <b>A Happy Place </b><br />
-            <b>To</b> <span style={{ color: '#3B82F6' }}><b>Learn</b></span> & <span style={{ color: '#059263' }}><b>Grow</b></span>
-          </h1>
-          <p style={{ fontSize: '1.1rem', color: '#4A5568', marginBlockEnd: '2rem', lineHeight: '1.5' }}>
-            <b>Inspiring young minds to explore, imagine and achieve every day.</b>
-          </p>
+        <div className="hero-text-block">
+          
+          <h1 className="hero-title">
+  <span className="hero-welcome">Welcome to</span> <br />
+  <span className="hero-brand-name">
+    {/* SUNSHINE */}
+    <span className="clr-pink">S</span>
+    <span className="clr-blue">u</span>
+    <span className="clr-olive">n</span>
+    <span className="clr-orange">s</span>
+    <span className="clr-magenta">h</span>
+    <span className="clr-midblue">i</span>
+    <span className="clr-orange">n</span>
+    <span className="clr-pink">e</span>
+    
+    {" "} <br className="d-block d-sm-none" /> {/* Forces clean break on small mobile */}
+    
+    {/* NURSERY */}
+    <span className="clr-orange">N</span>
+    <span className="clr-blue">u</span>
+    <span className="clr-pink">r</span>
+    <span className="clr-blue">s</span>
+    <span className="clr-pink">e</span>
+    <span className="clr-olive">r</span>
+    <span className="clr-skyblue">y</span>
+  </span>
+</h1>
+          
+          <h2 className="hero-description">
+            <b>A Happy Place To Learn & Grow</b>
+          </h2>
+          
           <div style={{ display: 'flex', gap: '3.75rem', flexWrap: 'wrap' }}>
-            <button style={{ backgroundColor: '#f80a0a', color: 'white', border: 'none', padding: '0.75rem 1.75rem', borderRadius: '9999px', fontWeight: '700', cursor: 'pointer' }}>
-              Enroll Now ➔
-            </button>
-            <button style={{ backgroundColor: 'white', color: '#2169dc', border: '2px solid #3B82F6', padding: '0.75rem 1.75rem', borderRadius: '9999px', fontWeight: '700', cursor: 'pointer' }}>
-              Contact Us ➔
-            </button>
+            <Link to="/contactus" className="admission-btn-link">
+              <button className="admission-btn">
+                <span className="btn-text">Admission Open ➔</span>
+              </button>
+            </Link>
           </div>
         </div>
 
       </div>
       <div style={{
         position: 'absolute',
-        bottom: '-2px', /* Forces overlap to eliminate tiny structural lines */
+        bottom: '-2px',
         left: 0,
         width: '100%',
-        lineHeight: 0,
+        lineHeight: 0, // Fixed: changed from line-height
         zIndex: 1
       }}>
         <img 
@@ -58,7 +82,7 @@ export default function Hero() {
           style={{
             width: '100%',
             height: '60px',
-            maxHeight: '130px', /* Keeps the scale aligned perfectly with the layout height */
+            maxHeight: '130px', // Fixed: changed from max-height
             display: 'block'
           }} 
         />

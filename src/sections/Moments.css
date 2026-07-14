@@ -1,0 +1,122 @@
+/* ==========================================================================
+   📦 RESPONSIVE CAROUSEL ENGINE
+   ========================================================================== */
+
+.moments-carousel-container {
+  position: relative;
+  padding: 0 40px; /* Gives room for side floating buttons */
+}
+
+.moments-viewport {
+  overflow: hidden; /* Vital: Masks items outside view boundary */
+  width: 100%;
+}
+
+.moments-track {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Elegant elastic slide glide */
+  width: 100%;
+}
+
+.moment-card-wrapper {
+  flex: 0 0 auto; /* Disables squishing down cards */
+  padding: 0 8px; /* Safe gutters between images */
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.moment-card {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  background: #f8fafc;
+}
+
+.moment-image {
+  width: 100%;
+  height: 280px; /* Fixed height across rows for clean alignments */
+  object-fit: cover; /* Keeps kid pictures un-stretched and cropped nicely */
+  display: block;
+}
+
+/* Focused vs Muted Accents */
+.out-view {
+  opacity: 0.5;
+  transform: scale(0.96);
+}
+
+.in-view {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ==========================================================================
+   🔘 RESPONSIVE NAVIGATION CONTROLS
+   ========================================================================== */
+.moments-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  color: #E84E88 !important;
+  font-weight: bold;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.moments-nav-btn:hover {
+  background-color: #E84E88 !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 14px rgba(232, 78, 136, 0.25);
+}
+
+.nav-left { left: -5px; }
+.nav-right { right: -5px; }
+
+/* Dots styling */
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #cbd5e1;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background-color: #E84E88;
+  transform: scale(1.3);
+  width: 24px; /* Gives a beautiful pill shape shortcut loop to active index */
+  border-radius: 6px;
+}
+
+/* ==========================================================================
+   📱 BREAKPOINTS (MOBILE & TABLET FIXES)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .moments-carousel-container {
+    padding: 0 20px; /* Slim down padding on tighter viewports */
+  }
+  
+  .moment-image {
+    height: 240px; /* Shorter landscape profile on small screens */
+  }
+
+  .moments-nav-btn {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .nav-left { left: -10px; }
+  .nav-right { right: -10px; }
+}

@@ -1,0 +1,66 @@
+/* ==========================================================================
+   PROGRAMS CONTAINER (DESKTOP DEFAULT)
+   ========================================================================== */
+
+.programs-grid {
+  display: grid;
+  gap: 1.5rem; /* Increased spacing slightly for better visual breathing room */
+  justify-content: center;
+  grid-auto-flow: column;
+  grid-auto-columns: min-content; /* Keeps exact desktop alignment */
+}
+
+.program-card {
+  width: 250px;          
+  height: 250px;         
+  border-radius: 50px;    
+  overflow: hidden;      
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Playful physical popup float when parents hover over a program */
+.program-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.program-media-wrapper {
+  height: 100%; 
+  width: 100%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
+/* ==========================================================================
+   TABLET & MOBILE RESPONSIVENESS (Screens under 1400px / Breakpoints)
+   ========================================================================== */
+@media (max-width: 1350px) {
+  .programs-grid {
+    /* Breaks the rigid horizontal single-line restriction */
+    grid-auto-flow: row; 
+    /* Automatically creates columns that wrap cleanly down to the next row */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .programs-grid {
+    /* Displays cards stacked vertically in a neat single row loop for easy mobile scrolling */
+    grid-template-columns: repeat(1, 250px); 
+    gap: 1.5rem;
+  }
+  
+  /* Gently rescales decoration icons so they fit nicely on mobile screens */
+  .programs-section h2 img {
+    width: 2.5rem !important;
+    height: auto !important;
+  }
+}

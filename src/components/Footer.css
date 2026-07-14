@@ -1,0 +1,72 @@
+/* ==========================================================================
+   FOOTER STRUCTURE (DESKTOP DEFAULT)
+   ========================================================================= */
+
+.main-footer-wrapper {
+  font-family: 'sans-serif';
+}
+
+.footer-logo-box {
+  max-width: 340px;
+}
+
+.footer-tagline {
+  font-size: 0.95rem; 
+  line-height: 1.5; 
+  color: #4A5568;
+}
+
+.social-icon-span {
+  display: inline-block; 
+  width: 30px; 
+  height: 30px;
+}
+
+/* Base styling for our responsive links */
+.footer-links-list {
+  color: #4A5568; 
+  font-size: 0.95rem;
+}
+
+.footer-links-list li {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.footer-links-list li:hover {
+  color: #E84E88; /* Soft color change on hover */
+}
+
+/* Balanced grid columns with dashed borders on desktop layout views */
+.dashed-right-divider {
+  border-right: 1.5px dashed #A0AEC0;
+  padding-right: 15px;
+}
+.footer-credits-border {
+  border-top: 1px solid rgba(0, 0, 0, 0.08); /* Soft line above the attribution */
+  letter-spacing: 0.3px;
+}
+
+/* Optional: Subtle hover effect on the developer's phone number */
+.footer-credits-border a:hover {
+  color: #E84E88 !important;
+  transition: color 0.2s ease;
+}
+
+/* ==========================================================================
+   TABLET & MOBILE RESPONSIVENESS (Screens under 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Cleans out vertical dividing borders cleanly when layout columns collapse vertically */
+  .dashed-right-divider {
+    border-right: none !important;
+    padding-right: 0 !important;
+    border-bottom: 1px dashed #CBD5E1; /* Playful bottom divider for stacked sections */
+    padding-bottom: 1.5rem;
+  }
+  
+  /* Adds space between columns when stacked */
+  .main-footer-wrapper .col-12 {
+    margin-bottom: 1rem;
+  }
+}
