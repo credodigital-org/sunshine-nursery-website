@@ -1,0 +1,167 @@
+/* ==========================================================================
+   GALLERY RESPONSIVE STYLESHEET (DESKTOP STRUCTURE FOR MOBILE & TABLETS)
+   ========================================================================== */
+
+@media (max-width: 991px) {
+  
+  /* Hero section container adjustments */
+  .gallery-hero-wrapper {
+    padding-top: 170px !important;    /* Prevents header overlapping navbar on mobile */
+    padding-bottom: 40px !important;
+    min-height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* FORCES DESKTOP STRUCTURE SIDE-BY-SIDE ON MOBILE */
+  .gallery-hero-row {
+    display: flex !important;
+    flex-direction: row !important;      /* Forces side-by-side layout */
+    align-items: center !important;
+    justify-content: space-between !important;
+    text-align: left !important;         /* Retains left alignment like desktop */
+    flex-wrap: nowrap !important;
+  }
+
+  /* Split row dynamically: Left Side text space */
+  .gallery-text-panel {
+    z-index: 10 !important;
+    margin-bottom: 0px !important;
+    padding-left: 10px !important;
+    padding-right: 5px !important;
+    width: 50% !important;               /* Exact half container split */
+    flex: 0 0 50% !important;
+  }
+
+  .gallery-title {
+    padding: 4px 0 !important;
+    font-size: 1.6rem !important;        /* Scales text down to fit screen width */
+    line-height: 1.2 !important;
+  }
+
+  .gallery-lead-text {
+    padding: 5px 0 !important;
+    font-size: 0.8rem !important;        /* Ensures paragraph fits neatly */
+    line-height: 1.4 !important;
+    br {
+      display: none; /* Allows natural line wrapping on tiny screens */
+    }
+  }
+
+  /* Repositions the decorative sun safely into a corner */
+  .gallery-decor-sun {
+    left: auto !important;
+    right: -10px !important;
+    top: -45px !important;
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  /* Split row dynamically: Right Side Masked Image Space */
+  .gallery-image-panel {
+    position: relative !important;
+    width: 50% !important;               /* Exact half container split */
+    flex: 0 0 50% !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    height: 180px !important;            /* Constrains height to match text profile */
+    margin-top: 0px !important;
+  }
+
+  .gallery-kids-mask {
+    position: absolute !important;
+    top: 0 !important;
+    right: -12px !important;             /* Pulls mask cleanly to the right edge */
+    width: 100% !important;
+    max-width: 220px !important;         /* Balanced width constraint for mobile */
+    height: 100% !important;           
+    overflow: hidden !important;
+    /* Retains the beautiful desktop curve mask structure */
+    border-radius: 100% 0% 0% 100% / 50% 0% 0% 50% !important;
+    -webkit-border-radius: 100% 0% 0% 100% / 50% 0% 0% 50% !important;
+    z-index: 4 !important;
+  }
+
+  .gallery-kids-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;        /* Prevents squeezed shapes */
+    object-position: right center !important; 
+  }
+
+  /* Hide raw foreground desktop absolute assets to avoid broken screen scaling */
+  .gallery-decor-flower1,
+  .gallery-decor-flower2 {
+    display: none !important;
+  }
+
+  /* Forces bottom landscape white waves directly over the section dividers */
+  .gallery-bottom-wave {
+    position: absolute !important;
+    bottom: -2px !important;             /* Slightly pulled down to eliminate gap lines */
+    left: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    z-index: 5 !important; 
+    filter: drop-shadow(0px -10px 0px #7cdf7f) !important; 
+  }
+
+  /* --- GRID FILTER & CARDS RESPONSIVENESS --- */
+  
+  /* Creates horizontal scrollbar for filters on small mobile instead of cluttered wrapping */
+  .gallery-filter-bar {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    justify-content: flex-start !important;
+    padding: 10px 15px !important;
+    gap: 8px !important;
+    margin-bottom: 2rem !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; 
+  }
+  
+  .gallery-filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .gallery-filter-bar button {
+    flex: 0 0 auto !important; /* Prevents text buttons from shrinking */
+    font-size: 0.9rem !important;
+    padding: 6px 18px !important;
+  }
+
+  /* Cards grid optimization */
+  .gallery-grid {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  /* Makes gallery grid look extra clean on smaller mobile screens */
+  .gallery-card-col {
+    margin-bottom: 10px;
+  }
+
+  .gallery-card-thumb {
+    border-radius: 16px !important; 
+  }
+}
+
+/* Tablet targeted viewport optimization adjustments (Side-by-side scaled up) */
+@media (min-width: 576px) and (max-width: 991px) {
+  .gallery-title {
+    font-size: 2.2rem !important;
+  }
+
+  .gallery-lead-text {
+    font-size: 1rem !important;
+  }
+
+  .gallery-image-panel {
+    height: 260px !important;
+  }
+
+  .gallery-kids-mask {
+    max-width: 340px !important; /* Offers deeper viewport aspect height for wider tablets */
+  }
+}

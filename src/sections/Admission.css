@@ -1,0 +1,88 @@
+/* ==========================================================================
+   3D EYE-BLINK ADMISSION BUTTON
+   ========================================================================== */
+
+.admission-btn-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.admission-btn {
+    /* Playful, bright Apple-Caterpillar Green gradient */
+    background: linear-gradient(to bottom, #87D331 0%, #5CB815 100%);
+    
+    border: none;
+    border-radius: 9999px;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    
+    /* Strong 3D foundation layers */
+    box-shadow: 
+        0 4px 0px #468c0e,
+        0 8px 0px #32660a,
+        0 12px 20px rgba(92, 184, 21, 0.4);
+        
+    transform-origin: center; /* Ensures it blinks toward the center, like an eye */
+    transition: all 0.15s cubic-bezier(0.25, 0.8, 0.25, 1);
+    
+    /* Attaches the eye-blink animation loop (repeats every 3.5 seconds) */
+    animation: eye-blink-loop 3.5s infinite ease-in-out;
+}
+
+/* Crisp White Text */
+.btn-text {
+    color: #FFFFFF; 
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 800;
+    font-size: 1.35rem;
+    letter-spacing: 0.8px;
+    display: inline-block;
+    transition: transform 0.1s ease;
+    text-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* --- INTERACTIVE STATES --- */
+
+.admission-btn:hover {
+    background: linear-gradient(to bottom, #9cee3b 0%, #69cf19 100%);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 4px 0px #468c0e,
+        0 6px 0px #32660a,
+        0 14px 25px rgba(92, 184, 21, 0.55);
+    animation-play-state: paused; /* Freezes the blinking while interacting */
+}
+
+.admission-btn:active {
+    transform: translateY(10px); /* Fully pressed down */
+    box-shadow: 
+        0 2px 0px #32660a,
+        0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   THE EYE-BLINK ANIMATION KEYFRAMES
+   ========================================================================== */
+@keyframes eye-blink-loop {
+    /* 0% to 85%: The button rests wide awake and visible */
+    0%, 82%, 88%, 100% {
+        transform: scaleY(1) scaleX(1);
+        filter: brightness(1);
+        opacity: 1;
+    }
+    /* 85%: The rapid pinch shut (Eyelid closes) */
+    85% {
+        transform: scaleY(0.05) scaleX(1.05); /* Flattens entirely vertically */
+        filter: brightness(1.2);              /* Creates a quick dynamic light flash */
+        opacity: 0.8;                         /* Softens the edges while flat */
+    }
+    /* 92%: Double-blink tick effect (Optional second rapid micro-flutter) */
+    90% {
+        transform: scaleY(0.1) scaleX(1.02);
+    }
+}

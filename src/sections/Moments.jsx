@@ -1,87 +1,97 @@
-import React from 'react';
-import moment1 from '../assets/moment1.png';
-import moment2 from '../assets/moment2.png';
-import moment3 from '../assets/moment3.png';
-import moment4 from '../assets/moment4.png';
-import moment5 from '../assets/moment5.png';
+import React, { useState, useEffect } from 'react';
+import './Moments.css';
+import moment1 from '../assets/HeroImages/moment1.png';
+import moment2 from '../assets/HeroImages/moment2.png';
+import moment3 from '../assets/HeroImages/moment3.png';
+import moment4 from '../assets/HeroImages/moment4.png';
+import moment5 from '../assets/HeroImages/moment5.png';
 
 export default function HappyMoments() {
+  const images = [moment1, moment2, moment3, moment4, moment5];
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [visibleSlots, setVisibleSlots] = useState(4); // Default to desktop view count
+
+  // Dynamically calculate how many items fit on the screen
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 576) {
+        setVisibleSlots(1); // 1 Image on Mobile Phones
+      } else if (window.innerWidth < 992) {
+        setVisibleSlots(2); // 2 Images on Tablets
+      } else {
+        setVisibleSlots(4); // 4 Images on Desktop
+      }
+    };
+
+    handleResize(); // Run on mount
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Total shiftable steps safely prevents scrolling into empty voids
+  const maxIndex = images.length - visibleSlots;
+
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+  };
+
   return (
-    <section className="py-5 bg-white" style={{ fontFamily: 'sans-serif' }}>
+    <section className="py-5 bg-white moments-section">
       <div className="container position-relative">
         
-        {/* 1. SECTION TITLE */}
         <div className="text-center mb-4">
-          <h2 style={{ color: '#E84E88', fontWeight: '700' }}>
-            Our Happy Moments ♡
-          </h2>
+          <h2 className="moments-title">Our Happy Moments ♡</h2>
         </div>
 
-        {/* 2. THE CAROUSEL CONTAINER (With Arrows on left and right) */}
-        <div className="position-relative px-4">
+        {/* CAROUSEL TRACK SHIELD */}
+        <div className="moments-carousel-container">
           
-          {/* Left Pink Arrow */}
-          <button 
-            className="btn rounded-circle position-absolute" 
-            style={{ backgroundColor: '#E84E88', color: 'white', width: '35px', height: '35px', left: '0', top: '50%', transform: 'translateY(-50%)', border: 'none', zIndex: 5 }}
-          >
+          <button className="moments-nav-btn nav-left" onClick={handlePrev} aria-label="Previous">
             &#10094;
           </button>
 
-          {/* Right Pink Arrow */}
-          <button 
-            className="btn rounded-circle position-absolute" 
-            style={{ backgroundColor: '#E84E88', color: 'white', width: '35px', height: '35px', right: '0', top: '50%', transform: 'translateY(-50%)', border: 'none', zIndex: 5 }}
-          >
+          <button className="moments-nav-btn nav-right" onClick={handleNext} aria-label="Next">
             &#10095;
           </button>
 
-          {/* 3. FIVE IMAGES DISPLAYED USING SIMPLE BOOTSTRAP COLUMNS */}
-          {/* flex-nowrap and overflow-auto lets it scroll left/right naturally on mobile phones */}
-          <div className="row g-3 flex-nowrap overflow-auto pb-2 justify-content-md-center">
-            
-            {/* Image Box 1 */}
-            <div className="col-9 col-sm-6 col-md-2" style={{ minWidth: '220px' }}>
-              <div style={{ height: '220px', borderRadius: '24px', overflow: 'hidden', backgroundColor: '#f8f9fa' }}>
-                <img src={moment1} alt="Moment 1" className="w-100 h-100" style={{ objectFit: 'cover' }} />
-              </div>
-            </div>
+          {/* DYNAMIC TRACK SLIDE LAYER */}
+          <div className="moments-viewport">
+            <div 
+              className="moments-track" 
+              style={{ transform: `translateX(-${activeIndex * (100 / visibleSlots)}%)` }}
+            >
+              {images.map((imgSrc, index) => {
+                // Determines if an item is currently showing inside the view box
+                const isVisible = index >= activeIndex && index < activeIndex + visibleSlots;
 
-            {/* Image Box 2 */}
-            <div className="col-9 col-sm-6 col-md-2" style={{ minWidth: '220px' }}>
-              <div style={{ height: '220px', borderRadius: '24px', overflow: 'hidden', backgroundColor: '#f8f9fa' }}>
-                <img src={moment2} alt="Moment 2" className="w-100 h-100" style={{ objectFit: 'cover' }} />
-              </div>
+                return (
+                  <div 
+                    key={index} 
+                    className={`moment-card-wrapper ${isVisible ? 'in-view' : 'out-view'}`}
+                    style={{ width: `${100 / visibleSlots}%` }}
+                  >
+                    <div className="moment-card">
+                      <img src={imgSrc} alt={`Moment ${index + 1}`} className="moment-image" />
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-
-            {/* Image Box 3 */}
-            <div className="col-9 col-sm-6 col-md-2" style={{ minWidth: '220px' }}>
-              <div style={{ height: '220px', borderRadius: '24px', overflow: 'hidden', backgroundColor: '#f8f9fa' }}>
-                <img src={moment3} alt="Moment 3" className="w-100 h-100" style={{ objectFit: 'cover' }} />
-              </div>
-            </div>
-
-            {/* Image Box 4 */}
-            <div className="col-9 col-sm-6 col-md-2" style={{ minWidth: '220px' }}>
-              <div style={{ height: '220px', borderRadius: '24px', overflow: 'hidden', backgroundColor: '#f8f9fa' }}>
-                <img src={moment4} alt="Moment 4" className="w-100 h-100" style={{ objectFit: 'cover' }} />
-              </div>
-            </div>
-
-            {/* Image Box 5 */}
-            <div className="col-9 col-sm-6 col-md-2" style={{ minWidth: '220px' }}>
-              <div style={{ height: '220px', borderRadius: '24px', overflow: 'hidden', backgroundColor: '#f8f9fa' }}>
-                <img src={moment5} alt="Moment 5" className="w-100 h-100" style={{ objectFit: 'cover' }} />
-              </div>
-            </div>
-
           </div>
 
-          {/* 4. THREE LITTLE DOT INDICATORS AT THE BOTTOM */}
+          {/* DOT INDICATORS (Responsive Count Matching Shifts) */}
           <div className="d-flex justify-content-center gap-2 mt-4">
-            <span className="rounded-circle" style={{ width: '10px', height: '10px', backgroundColor: '#E84E88' }}></span>
-            <span className="rounded-circle" style={{ width: '10px', height: '10px', backgroundColor: '#CBD5E1' }}></span>
-            <span className="rounded-circle" style={{ width: '10px', height: '10px', backgroundColor: '#CBD5E1' }}></span>
+            {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+              <span 
+                key={index}
+                className={`dot ${index === activeIndex ? 'active' : ''}`}
+                onClick={() => setActiveIndex(index)}
+              />
+            ))}
           </div>
 
         </div>

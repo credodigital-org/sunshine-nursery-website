@@ -1,9 +1,10 @@
-import React from 'react';
-import yellow from '../assets/yellow.png';
-import pink from '../assets/pink.png';
-import blue from '../assets/blue.png';
-import green from '../assets/green.png';
+import React from "react";
+import "./About.css";
 
+import yellow from "../assets/HeroImages/yellow.png";
+import pink from "../assets/HeroImages/pink.png";
+import blue from "../assets/HeroImages/blue.png";
+import green from "../assets/HeroImages/green.png";
 
 export default function StatsSection() {
   const statsData = [
@@ -14,47 +15,29 @@ export default function StatsSection() {
   ];
 
   return (
-    <section className="py-4 bg-white" style={{fontFamily: 'sans-serif' }}>
+    <section className="stats-section">
       <div className="container">
-        {/* Main Card Container */}
-        <div 
-          className="p-4 rounded-5" 
-          style={{ backgroundColor: '#EBF3FC',borderRadius: '30px' }}
-        >
-          <div className="row g-3 align-items-center justify-content-center">
+        <div className="stats-card">
+          <div className="row g-0">
+
             {statsData.map((stat, index) => (
-              <div 
-                key={stat.id} 
-                className="col-12 col-sm-6 col-md-3 d-flex align-items-center justify-content-center gap-3 py-2"
-                style={{
-                  // Draws a crisp dashed line on desktop between the items
-                  borderRight: index !== statsData.length - 1 && window.innerWidth >= 768 
-                    ? '1.5px dashed #A0AEC0' 
-                    : 'none'
-                }}
+              <div
+                key={stat.id}
+                className={`col-12 col-sm-6 col-md-3 stats-item ${
+                  index !== statsData.length - 1 ? "border-desktop" : ""
+                }`}
               >
-                {/* Image / Icon container */}
-                <div style={{ width: '65px', height: '65px' }} className="flex-shrink-0 d-flex align-items-center justify-content-center">
-                  {stat.icon && (
-                    <img 
-                      src={stat.icon} 
-                      alt={stat.label} 
-                      style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
-                    />
-                  )}
+                <div className="stats-icon">
+                  <img src={stat.icon} alt={stat.label} />
                 </div>
 
-                {/* Text Content */}
-                <div>
-                  <h3 className="fw-bold mb-0 lh-1" style={{ color: '#E84E88' }}>
-                    {stat.number}
-                  </h3>
-                  <p className="text-dark fw-bold mb-0 mt-1 small" style={{ letterSpacing: '0.3px' }}>
-                    {stat.label}
-                  </p>
+                <div className="stats-content">
+                  <h3 className="stats-number">{stat.number}</h3>
+                  <p className="stats-label">{stat.label}</p>
                 </div>
               </div>
             ))}
+
           </div>
         </div>
       </div>

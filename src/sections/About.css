@@ -1,0 +1,101 @@
+/* ==========================================================================
+   STATS CARD WRAPPER (DESKTOP DEFAULT LOOK)
+   ========================================================================== */
+
+.stats-section {
+  padding: 1rem 0rem;
+  background-color: #FFFFFF;
+}
+
+.stats-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border-radius: 2rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+  padding: 2.5rem;
+}
+
+.stats-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+}
+
+/* Vertical desktop borders between the 4 columns */
+.border-desktop {
+  border-right: 2px solid #F1F5F9;
+}
+
+.stats-icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.stats-number {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2D3748;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.stats-label {
+  font-size: 1rem;
+  color: #718096;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   TABLET & MOBILE RESPONSIVENESS (Screens under 992px)
+   ========================================================================== */
+@media (max-width: 992px) {
+  /* Remove desktop vertical dividers on smaller screens since they will stack */
+  .border-desktop {
+    border-right: none !important;
+  }
+  
+  .stats-card {
+    padding: 1.5rem;
+  }
+
+  /* Create clean grid item alignments when splitting into 2x2 or 4x1 layouts */
+  .stats-item {
+    justify-content: flex-start; /* Keeps them perfectly left-aligned inside their grid cell */
+    padding: 1.25rem 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-item {
+    justify-content: center; /* Centers them horizontally on small phones for neat reading */
+    border-bottom: 1px dashed #E2E8F0; /* Adds a playful nursery divider line between stacked items */
+    padding: 1.5rem 1rem;
+  }
+
+  /* Removes the bottom dash border on the final item */
+  .stats-item:last-child {
+    border-bottom: none;
+  }
+
+  .stats-number {
+    font-size: 2.2rem;
+  }
+
+  .stats-label {
+    font-size: 0.95rem;
+  }
+}

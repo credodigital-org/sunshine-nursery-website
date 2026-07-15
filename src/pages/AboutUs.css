@@ -1,0 +1,339 @@
+/* ==========================================================================
+   HERO / HEADER HERO SECTION (UNTOUCHED BASE DESKTOP STRUCTURE)
+   ========================================================================== */
+.about-hero-container {
+  background-color: #E3F2FD;
+  padding-top: 190px;
+  padding-bottom: 100px;
+  font-family: 'Fredoka', sans-serif;
+  position: relative;
+  overflow: hidden;
+  min-height: 95vh;
+}
+
+.about-hero-tagline {
+  max-width: 420px;
+  line-height: 1.6;
+}
+
+/* Decorative background elements */
+.decor-sun {
+  position: absolute;
+  top: -70px;
+  left: 560px;
+  width: 100px;
+  height: 100px;
+}
+
+.decor-cloud {
+  position: absolute;
+  top: 100px;
+  left: 640px;
+  width: 170px;
+  height: auto;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+/* Large Sweeping Image Mask Block */
+.about-sweeping-mask-wrapper {
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  z-index: 4;
+  margin-top: -120px;
+  margin-right: -100px;
+  height: 570px;
+  border-top-left-radius: 70%;
+  border-bottom-left-radius: 50%;
+  overflow: hidden;
+  background-color: #FFB800;
+  transform: translateY(100px);
+}
+
+.decor-bottom-wave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 8;
+  filter: drop-shadow(0px -10px 0px #7cdf7f);
+}
+
+/* ==========================================================================
+   FEATURE CHIPS, STORY & CORE VALUES
+   ========================================================================== */
+.about-story-container {
+  background-color: #FFFFFF;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.feature-icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 1rem;
+}
+
+.story-heading-underline {
+  color: #FF3B7A;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+
+/* Mission & Vision Boxes */
+.card-mission-box {
+  background-color: #FFE1EA;
+  border: 2px solid #FFB7CE;
+  border-radius: 24px;
+  min-height: 160px;
+}
+
+.card-vision-box {
+  background-color: #D2EAFF;
+  border: 2px solid #99CFFF;
+  border-radius: 24px;
+  min-height: 160px;
+}
+
+/* ==========================================================================
+   TEAM & SPECIAL FEATURES SECTIONS
+   ========================================================================== */
+.special-icon-wrapper {
+  width: 85px;
+  height: 85px;
+}
+
+.team-card-wrapper {
+  background-color: #FFEBF1;
+  border: 1px solid #FFC2D6;
+  border-radius: 24px;
+}
+
+.team-avatar-box {
+  width: 110px;
+  height: 110px;
+}
+
+/* ==========================================================================
+   ABOUT US RESPONSIVE STYLESHEET (FIXED TABLET & MOBILE)
+   ========================================================================== */
+
+@media (max-width: 991px) {
+  
+  .about-hero-container {
+    padding-top: 250px !important;    
+    padding-bottom: 60px !important;
+    min-height: auto !important;
+  }
+
+  /* FIXED CONTAINER FLEX WRAPPING FOR RESPONSIVE SCALING */
+  .about-hero-container > .container > .row {
+    display: flex !important;
+    flex-direction: row !important;      
+    align-items: flex-start !important; /* Prevents stretching lines */
+    justify-content: space-between !important;
+    text-align: left !important;         
+    flex-wrap: wrap !important;          /* Safe wrapping break guard if typography overflows */
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  /* Left Side text space: Changed from strict 50% to 55% for legibility */
+  .about-hero-container .col-12.col-md-6:first-child,
+  .about-hero-container [class*="col-"]:first-child {
+    z-index: 10 !important;
+    margin-bottom: 0px !important;
+    padding-left: 0px !important;
+    padding-right: 15px !important;
+    width: 55% !important;              
+    flex: 0 0 55% !important;
+    max-width: 55% !important;
+  }
+
+  .about-hero-container h2.display-6 {
+    padding-top: 0px !important;
+    font-size: 1.1rem !important;
+  }
+
+  .about-hero-container h1.display-4 {
+    padding-bottom: 4px !important;
+    font-size: 1.8rem !important;        
+    line-height: 1.2 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .about-hero-tagline {
+    padding: 2px 0 !important;
+    font-size: 0.85rem !important;       
+    line-height: 1.4 !important;
+    max-width: 100% !important;
+    margin-bottom: 1.2rem !important;
+  }
+
+  /* CHIPS LIST VERTICAL CONTAINER LAYOUT */
+  .about-hero-container .row.g-4 {
+    display: flex !important;
+    flex-direction: column !important;   
+    gap: 12px !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  
+  .about-hero-container .row.g-4 .col-12 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .feature-icon-circle {
+    width: 36px !important;
+    height: 36px !important;
+    margin-right: 10px !important;
+    flex-shrink: 0 !important;
+  }
+  
+  .feature-icon-circle img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .about-hero-container h5.fw-bold {
+    font-size: 0.85rem !important;
+    line-height: 1.1 !important;
+    margin: 0 0 2px 0 !important;
+  }
+
+  .about-hero-container .small.text-muted {
+    font-size: 0.72rem !important;
+    line-height: 1.2 !important;
+    margin: 0 !important;
+  }
+
+  /* Repositions the decorative sun */
+  .decor-sun {
+    display: block !important;
+    position: absolute !important;
+    left: auto !important;
+    right: 0px !important;
+    top: -15px !important;
+    width: 50px !important;
+    height: 50px !important;
+    z-index: 2 !important;
+  }
+
+  .decor-cloud {
+    display: none !important;
+  }
+
+  /* Right Side Masked Image Column space allocated dynamically to 45% */
+  .about-hero-container .col-12.col-md-6:last-child,
+  .about-hero-container [class*="col-"]:last-child {
+    position: relative !important;
+    width: 45% !important;              
+    flex: 0 0 45% !important;
+    max-width: 45% !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    height: 240px !important;            
+    margin-top: 10px !important;
+    padding: 0 !important;
+  }
+
+  /* FIXED MASK GEOMETRY BOUNDS */
+  .about-sweeping-mask-wrapper {
+    position: absolute !important;
+    top: 0px !important;
+    right: -15px !important;             
+    width: 115% !important;
+    max-width: 380px !important;         
+    height: 100% !important;             
+    margin: 0 !important;
+    transform: none !important;
+    overflow: hidden !important;
+    z-index: 4 !important;
+    background-color: #FFB800 !important;
+    border-radius: 100% 0% 0% 100% / 50% 0% 0% 50% !important;
+  }
+
+  .about-sweeping-mask-wrapper img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;        
+    object-position: center center !important; 
+  }
+
+  .decor-bottom-wave {
+    position: absolute !important;
+    bottom: -1px !important;             
+    left: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    z-index: 5 !important; 
+    filter: drop-shadow(0px -4px 0px #7cdf7f) !important; 
+  }
+}
+
+/* ==========================================================================
+   📱 DETAILED SMALL SCREEN MOBILE PHONE BREAKPOINT DOWN-SCALING (<576px)
+   ========================================================================== */
+@media (max-width: 575px) {
+  .about-hero-container {
+    padding-top: 160px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .about-hero-container .col-12.col-md-6:first-child,
+  .about-hero-container [class*="col-"]:first-child {
+    width: 60% !important;              
+    flex: 0 0 60% !important;
+    max-width: 60% !important;
+  }
+
+  .about-hero-container .col-12.col-md-6:last-child,
+  .about-hero-container [class*="col-"]:last-child {
+    width: 40% !important;              
+    flex: 0 0 40% !important;
+    max-width: 40% !important;
+    height: 160px !important;
+  }
+
+  .about-hero-container h1.display-4 {
+    font-size: 1.2rem !important;
+  }
+
+  .about-hero-tagline {
+    font-size: 0.72rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+
+  .about-sweeping-mask-wrapper {
+    right: -10px !important;
+    width: 125% !important;
+  }
+  
+  .about-hero-container h5.fw-bold {
+    font-size: 0.75rem !important;
+  }
+
+  .about-hero-container .small.text-muted {
+    font-size: 0.65rem !important;
+  }
+  
+  .feature-icon-circle {
+    width: 28px !important;
+    height: 28px !important;
+    margin-right: 6px !important;
+  }
+}
