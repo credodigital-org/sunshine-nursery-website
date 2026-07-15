@@ -1,27 +1,36 @@
-/* ==========================================
-   INTERACTIVE & MEDIUM-FAST BOUNCING 3D LOGO
-========================================== */
+/* ==========================================================================
+   GLOBAL NAVBAR CRITICAL RESET 
+   ========================================================================== */
+.navbar, .navbar-container, .logo-3d-container, .logo-3d-card {
+  box-sizing: border-box !important;
+}
 
+/* ==========================================================================
+   INTERACTIVE & MEDIUM-FAST BOUNCING 3D LOGO
+   ========================================================================== */
 .logo-3d-container {
   perspective: 1000px; 
-  display: inline-block;
+  display: inline-block !important;
   cursor: pointer;
-  position: relative;
-  padding-top: 30px;
-  left: -200px;
+  position: relative !important;
+  padding-top: 20px;
+  left: 0 !important;
+  right: auto !important;
+  margin-left: 0 !important;
+  margin-right: 20px !important;
+  flex-shrink: 0 !important;
+  transform: none !important;
 }
+
 .logo-3d-card {
-  width: 120px;
-  height: 120px;
-  position: relative;
+  width: 120px !important;
+  height: 120px !important;
+  position: relative !important;
   transform-style: preserve-3d;
   transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  
-  /* Speeds up the bounce loop to a medium-fast 1.2 seconds */
   animation: logo-bounce-fast 1.2s infinite ease-in-out;
 }
 
-/* Hover State: Pauses the fast bouncing so tilting is smooth */
 .logo-3d-container:hover .logo-3d-card {
   animation-play-state: paused; 
   transform: rotateY(25deg) rotateX(15deg);
@@ -46,8 +55,6 @@
   border-radius: 50%;
   background: #FFFFFF;
   transform: translateZ(0px);
-  
-  /* Sharp 3D layer shadows */
   box-shadow: 
     0 2px 0px #e6e6e6,
     0 4px 0px #cccccc,
@@ -55,216 +62,168 @@
     0 12px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* ==========================================
-   MEDIUM-FAST HIGHER BOUNCE KEYFRAMES
-========================================== */
+/* ==========================================================================
+   BOUNCE KEYFRAMES
+   ========================================================================== */
 @keyframes logo-bounce-fast {
   0%, 100% {
     transform: translateY(0);
-    /* Keeps the drop shadow tight and crisp at the bottom */
     filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
   }
-  
   50% {
-    transform: translateY(-22px); /* Pushes the height up higher */
-    /* Softens the shadow as the logo moves away from the header baseline */
+    transform: translateY(-22px);
     filter: drop-shadow(0 20px 12px rgba(0,0,0,0.06));
   }
 }
 
-/* ==========================================
-   RESPONSIVE SCALING & POSITION RESETS
-========================================== */
-@media (max-width: 768px) {
-  /* 1. Reset the container positioning so it stays on screen */
-  .logo-3d-container {
-    left: 0 !important; /* Overrides the desktop -200px and brings it back */
-    position: relative;
-    margin-left: 0;
-    padding-top: 30px;
-  }
-
-  /* 2. Scale the card down to fit a mobile header */
-  .logo-3d-card {
-    width: 75px;  
-    height: 75px;
-  }
-  
-  /* 3. Optional: Adjust bounce height for mobile so it doesn't hit the screen top */
-  @keyframes logo-bounce-fast {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px); /* Slightly gentler bounce on small screens */
-    }
-  }
-}
-
-
-
-/* ==========================
-   NAVBAR
-========================== */
-
+/* ==========================================================================
+   MAIN NAVBAR STRUCTURE (Edge-to-Edge Safe Placement)
+   ========================================================================== */
 .navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    /* Adjust side padding to control how close elements get to the screen edges */
-    padding: 24px 60px; 
-    transition: 0.3s;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 100;
+  padding: 24px 60px; 
+  transition: 0.3s;
 }
 
 .navbar-container {
-    max-width: 1400px; /* Increased slightly to match a wider layout structure */
-    margin: auto;
-    display: flex;
-    align-items: center; /* Forces logo and links onto the exact same horizontal axis line */
-    justify-content: space-between; /* Securely locks logo to the left and links to the right */
+  width: 100% !important;
+  max-width: 1400px; 
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
 }
 
-
-/* ==========================
-   NAVIGATION
-========================== */
-
+/* ==========================================================================
+   NAVIGATION LINKS
+   ========================================================================== */
 .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 35px;
-    justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 35px;
 }
 
 .nav-link {
-    text-decoration: none;
-    color: #2D3748;
-    font-family: 'Fredoka', sans-serif;
-    font-size: 1.15rem;
-    font-weight: 700;
-    padding-bottom: 2px;
-    border-bottom: 3px solid transparent;
-    transition: .3s;
-    line-height: 1; /* Strips implicit text height discrepancies */
+  text-decoration: none;
+  color: #2D3748;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding-bottom: 2px;
+  border-bottom: 3px solid transparent;
+  transition: .3s;
+  line-height: 1; 
 }
 
 .nav-link:hover {
-    color: #FF3B7A;
+  color: #FF3B7A;
 }
 
 .nav-link.active {
-    color: #FF3B7A;
-    border-bottom: 3px solid #FF3B7A;
+  color: #FF3B7A;
+  border-bottom: 3px solid #FF3B7A;
 }
 
-/* ==========================
+/* ==========================================================================
    HAMBURGER
-========================== */
-
+   ========================================================================== */
 .hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 6px;
-    z-index: 101; /* Keeps it above the mobile menu dropdown */
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+  z-index: 101; 
 }
 
 .hamburger span {
-    width: 28px;
-    height: 3px;
-    background: #333;
-    transition: .3s;
+  width: 28px;
+  height: 3px;
+  background: #333;
+  transition: .3s;
 }
 
-/* Animation */
 .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
+  transform: rotate(45deg) translate(6px, 6px);
 }
-
 .hamburger.active span:nth-child(2) {
-    opacity: 0;
+  opacity: 0;
 }
-
 .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
+  transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* ==========================
-   TABLET
-========================== */
+/* ==========================================================================
+   UNIFIED DEVICE LAYER OVERRIDES (768px - 1200px Core Breakpoint Window)
+   Covers: iPad Mini, iPad Air, iPad Pro, Surface Pro 7, Asus Zenbook, Nest Hub
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .navbar {
+    padding: 15px 30px !important;
+  }
 
-@media (max-width: 992px) {
-    .navbar {
-        padding: 18px 25px;
-    }
-    .navbar-logo img {
-        width: 90px;
-        height: 90px;
-    }
-    .nav-links {
-        gap: 20px;
-    }
-    .nav-link {
-        font-size: 1rem;
-    }
+  .logo-3d-card {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .nav-links {
+    gap: 15px !important;
+  }
+
+  .nav-link {
+    font-size: 0.95rem !important;
+    white-space: nowrap !important;
+  }
 }
 
-/* ==========================
-   MOBILE
-========================== */
-
+/* ==========================================================================
+   MOBILE MEDIA QUERY
+   ========================================================================== */
 @media (max-width: 768px) {
-    .navbar {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding: 12px 20px; /* Snug padding for a clean mobile header appearance */
-        box-sizing: border-box;
-    }
+  .navbar {
+    padding: 12px 20px !important;
+  }
 
-    .navbar-container {
-        width: 100%; /* Force the container to occupy the full screen width */
-        display: flex;
-        justify-content: space-between; /* Securely pushes logo to the left and hamburger to the right */
-        align-items: center;
-    }
+  .logo-3d-container {
+    padding-top: 8px !important;
+    margin-right: 0 !important;
+  }
 
-    .navbar-logo img {
-        width: 75px;   /* Adjusted size to fit mobile nicely without crowding */
-        height: 75px;
-        left: 0;       /* Restores natural alignment */
-    }
+  .logo-3d-card {
+    width: 70px !important;
+    height: 70px !important;
+  }
 
-    .hamburger {
-        display: flex; /* Displays on the far right side */
-    }
+  .hamburger {
+    display: flex !important;
+  }
 
-    .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.98); 
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-        padding: 30px;
-        display: none; 
-        box-shadow: 0 10px 20px rgba(0, 0, 0, .08);
-    }
+  .nav-links {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    display: none !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 25px !important;
+    padding: 30px !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+  }
 
-    .nav-links.open,
-    .nav-links.active { 
-        display: flex;
-    }
+  .nav-links.open {
+    display: flex !important;
+  }
 
-    .nav-link {
-        font-size: 1.1rem;
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-    }
+  .nav-link {
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 1.1rem !important;
+  }
 }

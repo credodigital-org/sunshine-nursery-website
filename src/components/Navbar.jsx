@@ -22,11 +22,11 @@ export default function Navbar() {
 
         {/* Logo */}
 
-        <div class="logo-3d-container">
-  <div class="logo-3d-card">
-    <img src={logo} alt="Sunshine Nursery Logo" class="logo-front" />
+        <div className="logo-3d-container">
+  <div className="logo-3d-card">
+    <img src={logo} alt="Sunshine Nursery Logo" className="logo-front" />
     
-    <div class="logo-depth"></div>
+    <div className="logo-depth"></div>
   </div>
 </div>
 
