@@ -18,12 +18,11 @@ export default function StatsSection() {
     <section className="stats-section">
       <div className="container">
         <div className="stats-card">
-          <div className="row g-0">
-
+          <div className="row g-0 flex-nowrap">
             {statsData.map((stat, index) => (
               <div
                 key={stat.id}
-                className={`col-12 col-sm-6 col-md-3 stats-item ${
+                className={`col-3 stats-item ${
                   index !== statsData.length - 1 ? "border-desktop" : ""
                 }`}
               >
@@ -37,7 +36,6 @@ export default function StatsSection() {
                 </div>
               </div>
             ))}
-
           </div>
         </div>
       </div>

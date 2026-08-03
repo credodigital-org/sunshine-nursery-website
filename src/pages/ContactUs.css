@@ -2,11 +2,96 @@
    CONTACT US RESPONSIVE STYLESHEET (DESKTOP STRUCTURE FOR MOBILE)
    ========================================================================== */
 
+/* ==========================================================================
+   TABLET (769px - 1200px)
+   ========================================================================== */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .contact-hero-wrapper {
+    padding-top: 190px !important;
+    padding-bottom: 60px !important;
+    min-height: auto !important;
+  }
+
+  .contact-hero-row {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    text-align: left !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .contact-text-panel {
+    z-index: 10 !important;
+    width: 50% !important;
+    flex: 0 0 50% !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .contact-title {
+    font-size: 2.4rem !important;
+    line-height: 1.2 !important;
+    padding: 3px 0 !important;
+  }
+
+  .contact-lead-text {
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+    padding: 3px 0 !important;
+  }
+
+  .contact-image-panel {
+    position: relative !important;
+    width: 50% !important;
+    flex: 0 0 50% !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    height: 280px !important;
+  }
+
+  .contact-kids-mask {
+    position: absolute !important;
+    top: 0 !important;
+    right: -12px !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    border-radius: 100% 0% 0% 100% / 50% 0% 0% 50% !important;
+    -webkit-border-radius: 100% 0% 0% 100% / 50% 0% 0% 50% !important;
+    z-index: 4 !important;
+  }
+
+  .contact-decor-sun {
+    left: auto !important;
+    right: -8px !important;
+    top: -40px !important;
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .contact-decor-flower1 {
+    display: none !important;
+  }
+
+  .contact-map-container {
+    height: 360px !important;
+  }
+  
+  .contact-school-img-wrapper {
+    height: 360px !important;
+  }
+}
+
+/* ==========================================================================
+   TABLET SMALL (up to 991px)
+   ========================================================================== */
 @media (max-width: 991px) {
   
   /* Hero wrapper adaptive bounds */
   .contact-hero-wrapper {
-    padding-top: 170px !important;    /* Keeps layout clear of mobile headers */
+    padding-top: 170px !important;
     padding-bottom: 40px !important;
     min-height: auto !important;
     display: flex !important;
@@ -16,11 +101,11 @@
   /* FORCES DESKTOP STRUCTURE SIDE-BY-SIDE ON MOBILE */
   .contact-hero-row {
     display: flex !important;
-    flex-direction: row !important;      /* Forces side-by-side layout */
+    flex-direction: row !important;
     align-items: center !important;
     justify-content: space-between !important;
-    text-align: left !important;         /* Retains left alignment like desktop */
-    flex-nowrap: nowrap !important;
+    text-align: left !important;
+    flex-wrap: nowrap !important;
   }
 
   /* Split row dynamically: Left Side text space */
@@ -29,19 +114,19 @@
     margin-bottom: 0px !important;
     padding-left: 10px !important;
     padding-right: 5px !important;
-    width: 50% !important;               /* Exact half container split */
+    width: 50% !important;
     flex: 0 0 50% !important;
   }
 
   .contact-title {
     padding: 5px 0 !important;
-    font-size: 1.6rem !important;        /* Scales text down to fit screen width */
+    font-size: 1.6rem !important;
     line-height: 1.2 !important;
   }
 
   .contact-lead-text {
     padding: 5px 0 !important;
-    font-size: 0.8rem !important;        /* Ensures paragraph fits neatly */
+    font-size: 0.8rem !important;
     line-height: 1.4 !important;
   }
 
@@ -57,22 +142,21 @@
   /* Split row dynamically: Right Side Masked Image Space */
   .contact-image-panel {
     position: relative !important;
-    width: 50% !important;               /* Exact half container split */
+    width: 50% !important;
     flex: 0 0 50% !important;
     display: flex !important;
     justify-content: flex-end !important;
-    height: 180px !important;            /* Constrains height to match text profile */
+    height: 180px !important;
   }
 
   .contact-kids-mask {
     position: absolute !important;
     top: 0 !important;
-    right: -12px !important;             /* Pulls mask cleanly to the right edge */
+    right: -12px !important;
     width: 100% !important;
-    max-width: 220px !important;         /* Balanced width constraint for mobile */
+    max-width: 220px !important;
     height: 100% !important;           
     overflow: hidden !important;
-    /* Retains the beautiful desktop curve mask structure */
     border-radius: 100% 0% 0% 100% / 50% 0% 0% 50% !important;
     -webkit-border-radius: 100% 0% 0% 100% / 50% 0% 0% 50% !important;
     z-index: 4 !important;
@@ -81,11 +165,11 @@
   .contact-kids-img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important;        /* Ensures children images crop seamlessly */
+    object-fit: cover !important;
     object-position: right center !important;
   }
 
-  /* Remove absolute foreground desktop grass items to avoid clashing */
+  /* Remove absolute foreground desktop grass items */
   .contact-decor-flower1 {
     display: none !important;
   }
@@ -180,5 +264,77 @@
   
   .contact-school-img-wrapper {
     height: 340px !important;
+  }
+}
+
+/* ==========================================================================
+   MOBILE (up to 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .contact-hero-wrapper {
+    padding-top: 150px !important;
+  }
+
+  .contact-form-section .col-md-6 {
+    margin-bottom: 1rem !important;
+  }
+
+  /* Contact info cards on mobile */
+  .contact-info-card {
+    padding: 10px !important;
+    border-radius: 16px !important;
+  }
+
+  .contact-card-icon {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  /* Map section: full width on mobile */
+  .contact-map-container {
+    height: 220px !important;
+    border-radius: 16px !important;
+  }
+
+  .contact-school-img-wrapper {
+    height: 200px !important;
+    min-height: 200px !important;
+  }
+}
+
+/* ==========================================================================
+   SMALL MOBILE (up to 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .contact-hero-wrapper {
+    padding-top: 130px !important;
+    padding-bottom: 30px !important;
+  }
+
+  .contact-title {
+    font-size: 1.3rem !important;
+    padding: 3px 0 !important;
+  }
+
+  .contact-lead-text {
+    font-size: 0.72rem !important;
+    padding: 3px 0 !important;
+  }
+
+  .contact-image-panel {
+    height: 140px !important;
+  }
+
+  .contact-kids-mask {
+    max-width: 160px !important;
+  }
+
+  .contact-map-container {
+    height: 200px !important;
+  }
+
+  .contact-school-img-wrapper {
+    height: 180px !important;
+    min-height: 180px !important;
   }
 }

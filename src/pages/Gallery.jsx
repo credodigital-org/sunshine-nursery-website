@@ -1,46 +1,80 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import sun from '../assets/AboutUsImages/sun.png';
-import cloud from '../assets/AboutUsImages/cloud.png';
 import wave from '../assets/AboutUsImages/wave.png';
 import children from '../assets/GalleryImages/children.png';
-import slide from '../assets/HeroImages/slide.jpg';
 import flower1 from '../assets/GalleryImages/flower1.png'; 
 import flower2 from '../assets/GalleryImages/flower2.png'; 
- 
-import gal1 from '../assets/GalleryImages/gal1.png'; 
-import gal2 from '../assets/GalleryImages/gal2.png'; 
-import gal3 from '../assets/GalleryImages/gal3.png'; 
-import gal4 from '../assets/GalleryImages/gal4.png'; 
-import gal5 from '../assets/GalleryImages/gal5.png'; 
-import gal6 from '../assets/GalleryImages/gal6.png'; 
-import gal7 from '../assets/GalleryImages/gal7.png'; 
-import gal8 from '../assets/GalleryImages/gal8.png'; 
-import gal9 from '../assets/GalleryImages/gal9.png'; 
-import gal10 from '../assets/GalleryImages/gal10.png'; 
-import gal11 from '../assets/GalleryImages/gal11.png'; 
-import gal12 from '../assets/GalleryImages/gal12.png'; 
+
+import activity1 from '../assets/GalleryImages/activity1.jpeg';
+import activity2 from '../assets/GalleryImages/activity2.jpeg';
+import activity3 from '../assets/GalleryImages/activity3.jpeg';
+import activity4 from '../assets/GalleryImages/activity4.jpeg';
+import activity5 from '../assets/GalleryImages/activity5.jpeg';
+import celebrations1 from '../assets/GalleryImages/celebrations1.jpeg';
+import events1 from '../assets/GalleryImages/events1.jpeg';
+import events2 from '../assets/GalleryImages/events2.jpeg';
+import events3 from '../assets/GalleryImages/events3.jpeg';
+import events4 from '../assets/GalleryImages/events4.jpeg';
+import events5 from '../assets/GalleryImages/events5.jpeg';
+import events6 from '../assets/GalleryImages/events6.jpeg';
+import outdoor1 from '../assets/GalleryImages/outdoor1.jpeg';
 
 import About from "../sections/About";
 import CTA from '../sections/CTA';
-import './Gallery.css'; // Ensure you import the newly created stylesheet!
+import './Gallery.css';
 
 const galleryItems = [
-  { id: 1, category: 'class room', label: 'Class room activities', img: gal1 },
-  { id: 2, category: 'class room', label: 'Class room activities', img: gal2 },
-  { id: 3, category: 'Outdoors', label: 'Outside activities', img: gal3 },
-  { id: 4, category: 'Outdoors', label: 'Outside activities', img: gal4 },
-  { id: 5, category: 'Outdoors', label: 'Outside activities', img: gal5 },
-  { id: 6, category: 'Events', label: 'Events', img: gal6 },
-  { id: 7, category: 'Events', label: 'Events', img: gal7 },
-  { id: 8, category: 'Events', label: 'Events', img: gal8 },
-  { id: 9, category: 'Events', label: 'Events', img: gal9 },
-  { id: 10, category: 'class room', label: 'Classroom Activities', img: gal10 },
-  { id: 11, category: 'Outdoors', label: 'Outdoor Activities', img: gal11 },
-  { id: 12, category: 'Events', label: 'Events', img: gal12 },
+  { id: 1, category: 'Activity', label: 'Classroom Activity & Crafts', img: activity1 },
+  { id: 2, category: 'Activity', label: 'Interactive Learning Session', img: activity2 },
+  { id: 3, category: 'Activity', label: 'Creative Hands-on Activity', img: activity3 },
+  { id: 4, category: 'Activity', label: 'Group Classroom Fun', img: activity4 },
+  { id: 5, category: 'Activity', label: 'Early Skills Workshop', img: activity5 },
+  { id: 6, category: 'Celebrations', label: 'Nursery Festive Celebration', img: celebrations1 },
+  { id: 7, category: 'Events', label: 'Annual Day Celebrations', img: events1 },
+  { id: 8, category: 'Events', label: 'Special Nursery Gathering', img: events2 },
+  { id: 9, category: 'Events', label: 'Sports & Fun Activities', img: events3 },
+  { id: 10, category: 'Events', label: 'Nursery Cultural Event', img: events4 },
+  { id: 11, category: 'Events', label: 'Music & Dance Performance', img: events5 },
+  { id: 12, category: 'Events', label: 'Grand Stage Celebration', img: events6 },
+  { id: 13, category: 'Outdoors', label: 'Outdoor Playground Fun', img: outdoor1 },
 ];
 
+const categories = ['All', 'Activity', 'Events', 'Celebrations', 'Outdoors'];
+
 function Gallery() {
-  const [activeCategory, setActiveCategory] = React.useState('All');
+  const [activeCategory, setActiveCategory] = useState('All');
+  const [lightboxIndex, setLightboxIndex] = useState(null);
+
+  const filteredItems = galleryItems.filter(item => 
+    activeCategory === 'All' || item.category.toLowerCase() === activeCategory.toLowerCase()
+  );
+
+  const openLightbox = (index) => {
+    setLightboxIndex(index);
+  };
+
+  const closeLightbox = () => {
+    setLightboxIndex(null);
+  };
+
+  const prevImage = () => {
+    setLightboxIndex((prev) => (prev === 0 ? filteredItems.length - 1 : prev - 1));
+  };
+
+  const nextImage = () => {
+    setLightboxIndex((prev) => (prev === filteredItems.length - 1 ? 0 : prev + 1));
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (lightboxIndex === null) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'ArrowRight') nextImage();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxIndex, filteredItems.length]);
 
   return (
     <>
@@ -78,7 +112,7 @@ function Gallery() {
 
               <p className="fs-5 fw-bold p-3 gallery-lead-text" style={{color:'#000000'}}>
                 A glimpse into the joyful learning, <br/>
-                A laughter, and love that fill our days.
+                laughter, and love that fill our days.
               </p>
             </div>
 
@@ -154,7 +188,7 @@ function Gallery() {
           
           {/* THE FILTER BUTTON BAR */}
           <div className="d-flex flex-wrap justify-content-center gap-2 mb-5 gallery-filter-bar">
-            {['All', 'class room', 'Activity', 'Playtime', 'Events', 'Celebrations', 'Outdoors'].map((cat) => (
+            {categories.map((cat) => (
               <button 
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
@@ -175,20 +209,63 @@ function Gallery() {
 
           {/* THE AUTOMATIC FILTER GRID */}
           <div className="row g-4 justify-content-center gallery-grid">
-            {galleryItems
-              .filter(item => activeCategory === 'All' || item.category === activeCategory)
-              .map((item) => (
-                <div key={item.id} className="col-12 col-sm-6 col-lg-3 text-center gallery-card-col">
-                  <div className="gallery-card-thumb" style={{ width: '100%', aspectRatio: '1/1', overflow: 'hidden', borderRadius: '20px', backgroundColor: '#f0f0f0' }}>
-                    <img src={item.img} alt={item.label} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            {filteredItems.map((item, index) => (
+              <div key={item.id} className="col-12 col-sm-6 col-md-4 col-lg-3 text-center gallery-card-col">
+                <div 
+                  className="gallery-card-thumb" 
+                  onClick={() => openLightbox(index)}
+                  title="Click to view in 4K HD"
+                >
+                  <img src={item.img} alt={item.label} className="gallery-card-img" />
+                  <div className="gallery-hover-overlay">
+                    <span>🔍 View 4K HD</span>
                   </div>
-                  <p className="fw-bold text-dark mt-2 small">{item.label}</p>
                 </div>
-              ))}
+                <p className="fw-bold text-dark mt-2 mb-0 small">{item.label}</p>
+                <span className="badge bg-light text-secondary border fw-normal" style={{ fontSize: '0.75rem' }}>
+                  {item.category}
+                </span>
+              </div>
+            ))}
           </div>
 
         </div>
       </section> 
+
+      {/* LIGHTBOX MODAL FOR 4K HD VIEW */}
+      {lightboxIndex !== null && (
+        <div className="lightbox-overlay" onClick={closeLightbox}>
+          <button className="lightbox-close-btn" onClick={closeLightbox} aria-label="Close">✕</button>
+
+          <button 
+            className="lightbox-nav-btn lightbox-prev-btn" 
+            onClick={(e) => { e.stopPropagation(); prevImage(); }}
+            aria-label="Previous Image"
+          >
+            ‹
+          </button>
+
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <img 
+              src={filteredItems[lightboxIndex].img} 
+              alt={filteredItems[lightboxIndex].label} 
+              className="lightbox-img" 
+            />
+            <div className="lightbox-caption text-center mt-3 text-white">
+              <h5 className="fw-bold m-0">{filteredItems[lightboxIndex].label}</h5>
+              <span className="badge bg-danger mt-1">{filteredItems[lightboxIndex].category}</span>
+            </div>
+          </div>
+
+          <button 
+            className="lightbox-nav-btn lightbox-next-btn" 
+            onClick={(e) => { e.stopPropagation(); nextImage(); }}
+            aria-label="Next Image"
+          >
+            ›
+          </button>
+        </div>
+      )}
 
       <About/>
       <CTA /> 

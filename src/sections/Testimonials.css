@@ -3,79 +3,135 @@
    ========================================================================== */
 
 .testimonials-section {
-  font-family: sans-serif;
+  font-family: 'Fredoka', sans-serif, system-ui;
 }
 
 .testimonials-main-title {
   color: #E84E88; 
-  fontWeight: 700;
+  font-weight: 700;
+  font-size: 2.5rem;
 }
 
 /* Base Card Style System */
 .testimonial-base-card {
-  border-radius: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 32px;
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* Subtle, clean interactive pop-up response on mouse-hover */
 .testimonial-base-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 16px 36px rgba(232, 78, 136, 0.14) !important;
 }
 
-/* Unique Theme Colored Quote Icon Declarations */
 .quote-pink { color: #FF4D8D; }
-.quote-blue { color: #3182CE; }
-.quote-yellow { color: #ECC94B; }
 
 .quote-icon-shared {
-  font-size: 2.5rem; 
-  line-height: 1; 
-  font-family: serif; 
+  font-size: 3rem; 
+  line-height: 0.8; 
+  font-family: Georgia, serif; 
   font-weight: bold;
 }
 
 .testimonial-body-text {
-  font-size: 0.95rem; 
-  line-height: 1.6;
+  font-size: 1.125rem; 
+  line-height: 1.8;
 }
 
+/* HD 4K Avatar Styling */
 .testimonial-avatar-wrapper {
-  width: 60px; 
-  height: 60px; 
+  width: 80px; 
+  height: 80px; 
   border-radius: 50%; 
   overflow: hidden;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  background-color: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.testimonial-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .testimonial-star-rating {
   color: #FFD700; 
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
 }
 
 /* ==========================================================================
-   TABLET & MOBILE RESPONSIVENESS (Screens under 768px)
+   TABLET (769px - 1200px)
+   ========================================================================== */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .testimonials-main-title {
+    font-size: 2.2rem;
+  }
+
+  .testimonial-body-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+}
+
+/* ==========================================================================
+   MOBILE (up to 768px)
    ========================================================================== */
 @media (max-width: 768px) {
-  /* Scales typography comfortably down to prevent uneven height snapping */
   .testimonials-main-title {
-    font-size: 1.85rem !important;
+    font-size: 1.75rem !important;
   }
   
-  /* Reduces container padding weights slightly on narrow mobile viewports */
   .testimonial-base-card {
     padding: 1.5rem !important;
-    border-radius: 24px;
+    border-radius: 20px;
   }
 
-  /* Compresses spacing patterns slightly to maintain dynamic height balance */
   .testimonial-body-text {
-    margin-bottom: 1.5rem !important;
-    font-size: 0.92rem;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
   }
 
-  /* Shrinks parent avatar dimensions to save layout line real estate */
   .testimonial-avatar-wrapper {
-    width: 50px !important;
-    height: 50px !important;
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .testimonial-star-rating {
+    font-size: 1.1rem;
+  }
+
+  /* Stack the footer row on mobile */
+  .testimonial-base-card .d-flex.flex-wrap.align-items-center.justify-content-between {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+  }
+}
+
+/* ==========================================================================
+   SMALL MOBILE (up to 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .testimonials-main-title {
+    font-size: 1.5rem !important;
+  }
+
+  .testimonial-base-card {
+    padding: 1.25rem !important;
+    border-radius: 16px;
+  }
+
+  .testimonial-body-text {
+    font-size: 0.9rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .testimonial-avatar-wrapper {
+    width: 52px !important;
+    height: 52px !important;
   }
 }

@@ -27,7 +27,7 @@
         0 8px 0px #32660a,
         0 12px 20px rgba(92, 184, 21, 0.4);
         
-    transform-origin: center; /* Ensures it blinks toward the center, like an eye */
+    transform-origin: center;
     transition: all 0.15s cubic-bezier(0.25, 0.8, 0.25, 1);
     
     /* Attaches the eye-blink animation loop (repeats every 3.5 seconds) */
@@ -55,11 +55,11 @@
         0 4px 0px #468c0e,
         0 6px 0px #32660a,
         0 14px 25px rgba(92, 184, 21, 0.55);
-    animation-play-state: paused; /* Freezes the blinking while interacting */
+    animation-play-state: paused;
 }
 
 .admission-btn:active {
-    transform: translateY(10px); /* Fully pressed down */
+    transform: translateY(10px);
     box-shadow: 
         0 2px 0px #32660a,
         0 4px 10px rgba(0, 0, 0, 0.3);
@@ -77,12 +77,57 @@
     }
     /* 85%: The rapid pinch shut (Eyelid closes) */
     85% {
-        transform: scaleY(0.05) scaleX(1.05); /* Flattens entirely vertically */
-        filter: brightness(1.2);              /* Creates a quick dynamic light flash */
-        opacity: 0.8;                         /* Softens the edges while flat */
+        transform: scaleY(0.05) scaleX(1.05);
+        filter: brightness(1.2);
+        opacity: 0.8;
     }
-    /* 92%: Double-blink tick effect (Optional second rapid micro-flutter) */
+    /* 92%: Double-blink tick effect */
     90% {
         transform: scaleY(0.1) scaleX(1.02);
     }
+}
+
+/* ==========================================================================
+   TABLET (769px - 1200px)
+   ========================================================================== */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .admission-btn {
+    padding: 0.85rem 2.5rem;
+  }
+
+  .btn-text {
+    font-size: 1.2rem;
+  }
+}
+
+/* ==========================================================================
+   MOBILE (up to 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .admission-btn {
+    padding: 0.75rem 2rem;
+    box-shadow: 
+      0 3px 0px #468c0e,
+      0 6px 0px #32660a,
+      0 10px 16px rgba(92, 184, 21, 0.35);
+  }
+
+  .btn-text {
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+/* ==========================================================================
+   SMALL MOBILE (up to 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .admission-btn {
+    padding: 0.65rem 1.75rem;
+  }
+
+  .btn-text {
+    font-size: 1rem;
+    letter-spacing: 0.4px;
+  }
 }

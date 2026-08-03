@@ -34,7 +34,7 @@
 }
 
 .footer-links-list li:hover {
-  color: #E84E88; /* Soft color change on hover */
+  color: #E84E88;
 }
 
 /* Balanced grid columns with dashed borders on desktop layout views */
@@ -42,8 +42,9 @@
   border-right: 1.5px dashed #A0AEC0;
   padding-right: 15px;
 }
+
 .footer-credits-border {
-  border-top: 1px solid rgba(0, 0, 0, 0.08); /* Soft line above the attribution */
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
   letter-spacing: 0.3px;
 }
 
@@ -54,19 +55,100 @@
 }
 
 /* ==========================================================================
-   TABLET & MOBILE RESPONSIVENESS (Screens under 768px)
+   TABLET (769px - 1200px)
+   ========================================================================== */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .footer-logo-box {
+    max-width: 240px;
+  }
+
+  .footer-tagline {
+    font-size: 0.88rem;
+  }
+
+  .footer-links-list {
+    font-size: 0.88rem;
+  }
+
+  .main-footer-wrapper .container-fluid {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+
+/* ==========================================================================
+   MOBILE (up to 768px)
    ========================================================================== */
 @media (max-width: 768px) {
-  /* Cleans out vertical dividing borders cleanly when layout columns collapse vertically */
+  /* Removes vertical dividing borders when layout columns stack vertically */
   .dashed-right-divider {
     border-right: none !important;
     padding-right: 0 !important;
-    border-bottom: 1px dashed #CBD5E1; /* Playful bottom divider for stacked sections */
+    border-bottom: 1px dashed #CBD5E1;
     padding-bottom: 1.5rem;
   }
   
   /* Adds space between columns when stacked */
   .main-footer-wrapper .col-12 {
     margin-bottom: 1rem;
+  }
+
+  /* Center all footer content on mobile */
+  .main-footer-wrapper .row {
+    text-align: center !important;
+  }
+
+  .main-footer-wrapper .align-items-md-start {
+    align-items: center !important;
+  }
+
+  .main-footer-wrapper .text-md-start {
+    text-align: center !important;
+  }
+
+  .footer-logo-box {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .footer-tagline {
+    font-size: 0.9rem;
+  }
+
+  .main-footer-wrapper .d-flex.gap-3.justify-content-center {
+    justify-content: center !important;
+  }
+
+  /* Contact info: center on mobile */
+  .main-footer-wrapper .d-flex.flex-column.gap-3 {
+    align-items: center !important;
+  }
+
+  /* Credits section */
+  .footer-credits-border {
+    margin-top: 1.5rem !important;
+    padding-top: 1rem !important;
+  }
+}
+
+/* ==========================================================================
+   SMALL MOBILE (up to 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .footer-logo-box {
+    max-width: 170px;
+  }
+
+  .footer-tagline {
+    font-size: 0.85rem;
+  }
+
+  .footer-links-list {
+    font-size: 0.88rem;
+  }
+
+  .main-footer-wrapper .container-fluid {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
 }
