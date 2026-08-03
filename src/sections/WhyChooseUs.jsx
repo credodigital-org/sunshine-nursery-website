@@ -86,9 +86,7 @@ export default function AboutSection() {
               <span style={{ color: '#E84E88' }}>About</span> <span style={{ color: '#3182CE' }}>Sunshine</span> <span style={{ color: '#48BB78' }}>Nursery</span>
             </h2>
             <p className="text-muted lh-lg mb-4">
-              At Sunshine Nursery, we provide a warm, caring and stimulating environment where children learn 
-              through play, creativity, music, stories and activities. We focus on the overall development 
-              of each child - socially, emotionally, physically and intellectually.
+              At Sunshine Nursery, we believe that every child deserves a joyful beginning. Our nurturing environment is designed to inspire curiosity, build confidence, and encourage a lifelong love of learning. From their very first days with us, children are supported, respected, and encouraged to grow at their own pace.
             </p>
             <Link to="/about">
             <button className="btn text-white px-4 py-2 rounded-pill mb-4" style={{ backgroundColor: '#E84E88', fontWeight: '600' }}>

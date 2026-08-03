@@ -8,14 +8,22 @@ import tick from '../assets/AboutUsImages/tick.png';
 import cloud from '../assets/AboutUsImages/cloud.png';
 import wave from '../assets/AboutUsImages/wave.png';
 import school from '../assets/AboutUsImages/school.png';
-import redarrow from '../assets/AboutUsImages/redarrow.png';
 import scope from '../assets/AboutUsImages/scope.png';
 import contact from '../assets/AboutUsImages/contact.png';
 import yellow from '../assets/AboutUsImages/yellow.png';
 import degree from '../assets/AboutUsImages/degree.png';
+import arrow from '../assets/AboutUsImages/redarrow.png';
 import blue from '../assets/AboutUsImages/blue.png';
 import fam from '../assets/AboutUsImages/fam.png';
-import aswini from '../assets/AboutUsImages/aswini.png';
+import mireilie from '../assets/AboutUsImages/Mireilie_saad.jpeg';
+import keiko from '../assets/AboutUsImages/Keiko_Fujie.jpeg';
+import kholoud from '../assets/AboutUsImages/Arabic_Teacher.jpeg';
+import care from '../assets/AboutUsImages/care.jpg';
+import shake from '../assets/AboutUsImages/handshake.jpg';
+import promise from '../assets/AboutUsImages/promise.jpg';
+
+
+
 
 import About from "../sections/About";
 import CTA from '../sections/CTA';
@@ -27,10 +35,10 @@ export default function AboutUs() {
       <div className="about-hero-container">
         
         <div className="container">
-          <div className="row align-items-center">
+          <div className="row align-items-center flex-nowrap">
             
             {/* LEFT COLUMN: Main textual titles & highlights */}
-            <div className="col-12 col-md-6 position-relative mb-md-0">
+            <div className="col-6 position-relative mb-md-0">
               
               {/* Floating Decorations hooks */}
               {sun && <img src={sun} alt="Sun decoration" className="decor-sun" />}
@@ -47,10 +55,10 @@ export default function AboutUs() {
               </p>
 
               {/* Grid Features */}
-              <div className="row g-4">
+              <div className="row g-4 flex-nowrap">
                 
                 {/* Feature 1: Nurturing Hearts */}
-                <div className="col-12 col-sm-6 d-flex align-items-center">
+                <div className="col-6 d-flex align-items-center">
                   <div className="feature-icon-circle" style={{ backgroundColor: '#FF3B7A' }}>
                     {love ? (
                       <img src={love} alt="Love icon" style={{ width: '70px', height: '70px' }} />
@@ -59,13 +67,13 @@ export default function AboutUs() {
                     )}
                   </div>
                   <div>
-                    <h5 className="fw-bold m-0 text-dark">Nuturing Hearts</h5>
-                    <p className="small text-muted m-0 fw-medium">We care with love and compassion</p>
+                    <h5 className="fw-bold m-0 text-dark feature-title">Nuturing Hearts</h5>
+                    <p className="small text-muted m-0 fw-medium feature-desc">We care with love and compassion</p>
                   </div>
                 </div>
 
                 {/* Feature 2: Building Future */}
-                <div className="col-12 col-sm-6 d-flex align-items-center">
+                <div className="col-6 d-flex align-items-center">
                   <div className="feature-icon-circle" style={{ backgroundColor: '#42A5F5' }}>
                     {tick ? (
                       <img src={tick} alt="Blue tick icon" style={{ width: '70px', height: '70px' }} />
@@ -74,8 +82,8 @@ export default function AboutUs() {
                     )}
                   </div>
                   <div>
-                    <h5 className="fw-bold m-0 text-dark">Building Future</h5>
-                    <p className="small text-muted m-0 fw-medium">We prepare children for a bright tomorrow</p>
+                    <h5 className="fw-bold m-0 text-dark feature-title">Building Future</h5>
+                    <p className="small text-muted m-0 fw-medium feature-desc">We prepare children for a bright tomorrow</p>
                   </div>
                 </div>
 
@@ -83,7 +91,7 @@ export default function AboutUs() {
             </div>
 
             {/* RIGHT COLUMN: Large Sweeping Layout Image Box */}
-            <div className="col-12 col-md-6 p-0 d-flex justify-content-end">
+            <div className="col-6 p-0 d-flex justify-content-end">
               <div className="about-sweeping-mask-wrapper">
                 <img 
                   src={children} 
@@ -121,64 +129,123 @@ export default function AboutUs() {
             <div className="col-12 col-md-6 ps-md-4">
               <h2 className="display-6 fw-bold mb-3" style={{ position: 'relative', display: 'inline-block' }}>
                 <span className="story-heading-underline">
-                  Our Story
+                  Who We Are
                 </span>
               </h2>
               <p className="fs-5 text-secondary mt-3" style={{ lineHeight: '1.7', fontWeight: '400' }}>
-                Founded With A Passion For Early Childhood Education, Sunshine Nursery Has Been Nurturing 
-                Young Minds For Over A Decade. We Provide A Safe, Joyful, And Inspiring Environment Where 
-                Children Can Explore, Learn, And Grow With Confidence.
+                Sunshine Nursery welcomes children from 45 days to 4 years old, providing high-quality early years education in a safe, caring, and stimulating environment. We follow the Early Years Foundation Stage (EYFS) curriculum, ensuring every child receives a well-rounded education that supports their personal, social, emotional, physical, and cognitive development.
               </p>
               <p className="fs-5 text-secondary" style={{ lineHeight: '1.7', fontWeight: '400' }}>
-                Our Dedicated Educators Create Engaging Learning Experiences That Foster Creativity, Curiosity, 
-                Social Development, And A Lifelong Love For Learning.
+                Our dedicated team believes that children learn best through play, exploration, and meaningful experiences.
+                We encourage independence, curiosity, and child-led learning, allowing each child to discover the world in a way that is natural and engaging for them.
               </p>
             </div>
           </div>
 
-          {/* MISSION & VISION BOXES ROW */}
+          {/* APPROACH, SUPPORT, PARTNERSHIP & PROMISE CARDS GRID */}
           <div className="row g-4 mt-2">
             
-            {/* Left Box: Our Mission */}
-            <div className="col-12 col-md-6">
-              <div className="h-100 p-4 d-flex align-items-center card-mission-box">
-                <div className="d-flex align-items-center w-100">
-                  <div className="me-4 flex-shrink-0" style={{ width: '85px' }}>
-                    <img src={redarrow} alt="Target Icon" className="img-fluid" />
-                  </div>
-                  <div>
-                    <h4 className="fw-bold mb-2" style={{ color: '#FF3B7A' }}>
-                      <span style={{ textDecoration: 'underline', textUnderlineOffset: '4px' }}>Our Mission</span>
-                    </h4>
-                    <p className="m-0 text-dark fw-medium" style={{ fontSize: '1.05rem', lineHeight: '1.5' }}>
-                      To provide a safe, loving and stimulating environment where childern learn through play, creativity and meaningful experiences.
-                    </p>
-                  </div>
+            {/* Card 1: Our Learning Approach (Full Width Layout - Centered) */}
+            <div className="col-12">
+              <div className="p-4 p-md-5 card-mission-box d-flex flex-column align-items-center text-center shadow-sm">
+                <div className="d-flex flex-column align-items-center mb-3">
+                  <div 
+        className="mb-2 rounded-circle overflow-hidden d-flex align-items-center justify-content-center" 
+        style={{ width: '80px', height: '80px' }}
+      >
+        <img 
+          src={arrow} 
+          alt="arrow Icon" 
+          className="w-100 h-100" 
+          style={{ objectFit: 'cover' }} 
+        />
+      </div>
+                  <h4 className="fw-bold m-0" style={{ color: '#FF3B7A' }}>Our Learning Approach</h4>
                 </div>
+                <p className="text-dark fw-medium mb-3" style={{ fontSize: '0.98rem', lineHeight: '1.6', maxWidth: '900px' }}>
+                  Our spacious classrooms are thoughtfully designed to encourage exploration, creativity, and independent learning. Inspired by the Reggio Emilia approach, our learning spaces are calm, inviting, and rich with opportunities for discovery, where children are free to investigate, create, and develop through hands-on experiences.
+                </p>
+                <p className="fw-bold text-dark mb-3" style={{ fontSize: '0.95rem' }}>
+                  Alongside the EYFS curriculum, we enrich each child’s learning journey with:
+                </p>
+                <ul className="list-unstyled m-0 text-dark fw-medium mx-auto" style={{ fontSize: '0.92rem', lineHeight: '1.6', maxWidth: '850px' }}>
+                  <li className="mb-2"><strong>Arabic and Islamic lessons:</strong> With a strong focus on the UAE National Identity, helping children develop a sense of belonging and appreciation for the country’s culture and values.</li>
+                  <li className="mb-2"><strong>French language classes:</strong> Introducing children to a new language through fun and interactive activities.</li>
+                  <li><strong>Music and Gymnastics sessions:</strong> Led by our experienced Japanese Sensei, promoting physical development, coordination, creativity, and confidence.</li>
+                </ul>
               </div>
             </div>
 
-            {/* Right Box: Our Vision */}
-            <div className="col-12 col-md-6">
-              <div className="h-100 p-4 d-flex align-items-center card-vision-box">
-                <div className="d-flex align-items-center w-100">
-                  <div className="me-4 flex-shrink-0" style={{ width: '85px' }}>
-                    <img src={scope} alt="Telescope Icon" className="img-fluid" />
-                  </div>
-                  <div>
-                    <h4 className="fw-bold mb-2" style={{ color: '#0288D1' }}>
-                      <span style={{ textDecoration: 'underline', textUnderlineOffset: '4px' }}>Our Vision</span>
-                    </h4>
-                    <p className="m-0 text-dark fw-medium" style={{ fontSize: '1.05rem', lineHeight: '1.5' }}>
-                      To be leading early childhood center that inspire young minds to become confidence, curious and compassionate lifelong learners.
-                    </p>
-                  </div>
+            {/* Card 2: Supporting Every Child (50% Width - Centered) */}
+            <div className="col-12 col-lg-6">
+              <div className="h-100 p-4 p-md-5 d-flex flex-column align-items-center text-center shadow-sm" style={{ backgroundColor: '#E8F8F5', border: '2px solid #A3E4D7', borderRadius: '24px' }}>
+                <div className="d-flex flex-column align-items-center mb-3">
+                  <div 
+        className="mb-2 rounded-circle overflow-hidden d-flex align-items-center justify-content-center" 
+        style={{ width: '80px', height: '80px' }}
+      >
+        <img 
+          src={care} 
+          alt="care Icon" 
+          className="w-100 h-100" 
+          style={{ objectFit: 'cover' }} 
+        />
+      </div>
+                  <h4 className="fw-bold m-0" style={{ color: '#16A085' }}>Supporting Every Child</h4>
                 </div>
+                <p className="text-dark fw-medium m-0" style={{ fontSize: '0.98rem', lineHeight: '1.7' }}>
+                  Every child develops in their own unique way. To ensure each child receives the support they need, Sunshine Nursery has an experienced Special Educational Needs (SEN) Specialist who provides guidance for children who may benefit from additional support, including behavioural development and minor speech delays, working closely with both teachers and families.
+                </p>
               </div>
             </div>
+
+            {/* Card 3: Partnering with Parents (50% Width - Centered) */}
+            <div className="col-12 col-lg-6">
+              <div className="h-100 p-4 p-md-5 d-flex flex-column align-items-center text-center shadow-sm" style={{ backgroundColor: '#FEF9E7', border: '2px solid #F9E79F', borderRadius: '24px' }}>
+                <div className="d-flex flex-column align-items-center mb-3">
+      <div 
+        className="mb-2 rounded-circle overflow-hidden d-flex align-items-center justify-content-center" 
+        style={{ width: '80px', height: '80px' }}
+      >
+        <img 
+          src={shake} 
+          alt="shake Icon" 
+          className="w-100 h-100" 
+          style={{ objectFit: 'cover' }} 
+        />
+      </div>
+                  <h4 className="fw-bold m-0" style={{ color: '#D4AC0D' }}>Partnering with Parents</h4>
+                </div>
+                <p className="text-dark fw-medium m-0" style={{ fontSize: '0.98rem', lineHeight: '1.7' }}>
+                  We believe that parents are a child’s first and most important teachers. By building strong partnerships with families, we create a consistent and supportive learning journey for every child. Throughout the year, we host a variety of celebrations, workshops, and special events where parents are warmly welcomed to participate, creating meaningful memories together and strengthening our nursery community.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 4: Our Promise */}
+<div className="col-12">
+  <div className="p-4 p-md-5 d-flex flex-column align-items-center text-center shadow-sm" style={{ backgroundColor: '#FADBD8', border: '2px solid #F5B7B1', borderRadius: '24px' }}>
+    
+    {/* Centered Circle Image Wrapper */}
+    <div 
+      className="mb-3 rounded-circle overflow-hidden flex-shrink-0 mx-auto" 
+      style={{ width: '90px', height: '90px' }}
+    >
+      <img 
+        src={promise} 
+        alt="Our Promise" 
+        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} 
+      />
+    </div>
+
+    <h4 className="fw-bold mb-3" style={{ color: '#C0392B' }}>Our Promise</h4>
+    <p className="text-dark fw-medium mx-auto m-0" style={{ fontSize: '1.05rem', lineHeight: '1.7', maxWidth: '800px' }}>
+      Every child is unique, and every childhood matters. We provide a nurturing environment where curiosity is celebrated, confidence grows, and a love of learning begins.
+    </p>
+  </div>
+</div>
 
           </div>
-
         </div>
       </div>
 
@@ -275,56 +342,43 @@ export default function AboutUs() {
             </h2>
           </div>
 
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 justify-content-center">
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 justify-content-center">
             
-            {/* Member 1 */}
+            {/* Teacher 1: Mireilie Saad */}
             <div className="col">
               <div className="h-100 p-4 d-flex flex-column align-items-center team-card-wrapper">
                 <div className="mb-3 overflow-hidden rounded-circle team-avatar-box">
-                  <img src={aswini} alt="Aswini singh" className="w-100 h-100" style={{ objectFit: 'cover' }} />
+                  <img src={mireilie} alt="Mireilie Saad" className="w-100 h-100" style={{ objectFit: 'cover', objectPosition: 'center top' }} />
                 </div>
-                <h4 className="fw-bold text-dark mb-2" style={{ fontSize: '1.25rem' }}>Aswini singh</h4>
-                <p className="text-secondary fw-normal m-0" style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-                  10+ years of experience in early childhood education and leadership.
+                <h4 className="fw-bold text-dark mb-2" style={{ fontSize: '1.3rem' }}>Mireilie Saad</h4>
+                <p className="text-secondary fw-semibold m-0" style={{ fontSize: '0.95rem', lineHeight: '1.5' }}>
+                  SEN Coordinator
                 </p>
               </div>
             </div>
 
-            {/* Member 2 */}
+            {/* Teacher 2: Keiko Fujie */}
             <div className="col">
               <div className="h-100 p-4 d-flex flex-column align-items-center team-card-wrapper">
                 <div className="mb-3 overflow-hidden rounded-circle team-avatar-box">
-                  <img src={aswini} alt="Aswini singh" className="w-100 h-100" style={{ objectFit: 'cover' }} />
+                  <img src={keiko} alt="Keiko Fujie" className="w-100 h-100" style={{ objectFit: 'cover', objectPosition: 'center top' }} />
                 </div>
-                <h4 className="fw-bold text-dark mb-2" style={{ fontSize: '1.25rem' }}>Aswini singh</h4>
-                <p className="text-secondary fw-normal m-0" style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-                  10+ years of experience in early childhood education and leadership.
+                <h4 className="fw-bold text-dark mb-2" style={{ fontSize: '1.3rem' }}>Keiko Fujie</h4>
+                <p className="text-secondary fw-semibold m-0" style={{ fontSize: '0.95rem', lineHeight: '1.5' }}>
+                  Gymnastics &amp; Music Teacher
                 </p>
               </div>
             </div>
 
-            {/* Member 3 */}
+            {/* Teacher 3: Kholoud Abu Zaid */}
             <div className="col">
               <div className="h-100 p-4 d-flex flex-column align-items-center team-card-wrapper">
                 <div className="mb-3 overflow-hidden rounded-circle team-avatar-box">
-                  <img src={aswini} alt="Aswini singh" className="w-100 h-100" style={{ objectFit: 'cover' }} />
+                  <img src={kholoud} alt="Kholoud Abu Zaid" className="w-100 h-100" style={{ objectFit: 'cover', objectPosition: 'center top' }} />
                 </div>
-                <h4 className="fw-bold text-dark mb-2" style={{ fontSize: '1.25rem' }}>Aswini singh</h4>
-                <p className="text-secondary fw-normal m-0" style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-                  10+ years of experience in early childhood education and leadership.
-                </p>
-              </div>
-            </div>
-
-            {/* Member 4 */}
-            <div className="col">
-              <div className="h-100 p-4 d-flex flex-column align-items-center team-card-wrapper">
-                <div className="mb-3 overflow-hidden rounded-circle team-avatar-box">
-                  <img src={aswini} alt="Aswini singh" className="w-100 h-100" style={{ objectFit: 'cover' }} />
-                </div>
-                <h4 className="fw-bold text-dark mb-2" style={{ fontSize: '1.25rem' }}>Aswini singh</h4>
-                <p className="text-secondary fw-normal m-0" style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-                  10+ years of experience in early childhood education and leadership.
+                <h4 className="fw-bold text-dark mb-2" style={{ fontSize: '1.3rem' }}>Kholoud Abu Zaid</h4>
+                <p className="text-secondary fw-semibold m-0" style={{ fontSize: '0.95rem', lineHeight: '1.5' }}>
+                  Arabic Teacher
                 </p>
               </div>
             </div>
