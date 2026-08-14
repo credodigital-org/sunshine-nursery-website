@@ -22,9 +22,6 @@ import care from '../assets/AboutUsImages/care.jpg';
 import shake from '../assets/AboutUsImages/handshake.jpg';
 import promise from '../assets/AboutUsImages/promise.jpg';
 
-
-
-
 import About from "../sections/About";
 import CTA from '../sections/CTA';
 
@@ -34,28 +31,28 @@ export default function AboutUs() {
       {/* HERO WRAPPER BLOCK */}
       <div className="about-hero-container">
         
-        <div className="container">
-          <div className="row align-items-center flex-nowrap">
+        <div className="about-hero-container-inner container">
+          <div className="row align-items-center about-hero-row">
             
             {/* LEFT COLUMN: Main textual titles & highlights */}
-            <div className="col-6 position-relative mb-md-0">
+            <div className="col-12 col-md-6 position-relative about-text-panel">
               
               {/* Floating Decorations hooks */}
               {sun && <img src={sun} alt="Sun decoration" className="decor-sun" />}
               {cloud && <img src={cloud} alt="Cloud decoration" className="decor-cloud" />}
 
-              <h2 className="display-6 fw-bold text-dark m-0">About</h2>
-              <h1 className="display-4 fw-bold mb-4">
+              <h2 className="display-6 fw-bold text-dark m-0 about-text-title">About</h2>
+              <h1 className="display-4 fw-bold mb-4 about-main-heading">
                 <span style={{ color: '#FF3B7A' }}>Sunshine</span>{' '}
                 <span style={{ color: '#4CAF50' }}>Nursery</span>
               </h1>
 
               <p className="fs-5 text-dark fw-semibold about-hero-tagline">
-                where little minds learn, <br/>play, grow and shine every day.
+                where little minds learn, <br className="d-none d-md-inline"/>play, grow and shine every day.
               </p>
 
               {/* Grid Features */}
-              <div className="row g-4 flex-nowrap">
+              <div className="row g-4 about-feature-row">
                 
                 {/* Feature 1: Nurturing Hearts */}
                 <div className="col-6 d-flex align-items-center">
@@ -67,7 +64,7 @@ export default function AboutUs() {
                     )}
                   </div>
                   <div>
-                    <h5 className="fw-bold m-0 text-dark feature-title">Nuturing Hearts</h5>
+                    <h5 className="fw-bold m-0 text-dark feature-title">Nurturing Hearts</h5>
                     <p className="small text-muted m-0 fw-medium feature-desc">We care with love and compassion</p>
                   </div>
                 </div>
@@ -91,13 +88,12 @@ export default function AboutUs() {
             </div>
 
             {/* RIGHT COLUMN: Large Sweeping Layout Image Box */}
-            <div className="col-6 p-0 d-flex justify-content-end">
+            <div className="col-12 col-md-6 about-mask-panel">
               <div className="about-sweeping-mask-wrapper">
                 <img 
                   src={children} 
                   alt="Children playing" 
-                  className="w-100 h-100"
-                  style={{ objectFit: 'cover', objectPosition: 'center' }} 
+                  className="w-100 h-100 about-mask-img"
                 />
               </div>
             </div>
@@ -111,7 +107,7 @@ export default function AboutUs() {
       
       {/* STORY & CORE VALUES WRAPPER BLOCK */}
       <div className="about-story-container">
-        <div className="container py-2">
+        <div className="container py-1">
           
           {/* OUR STORY ROW */}
           <div className="row align-items-center mb-5 pb-3">
@@ -143,23 +139,23 @@ export default function AboutUs() {
           </div>
 
           {/* APPROACH, SUPPORT, PARTNERSHIP & PROMISE CARDS GRID */}
-          <div className="row g-4 mt-2">
+          <div className="row g-3 mt-1">
             
-            {/* Card 1: Our Learning Approach (Full Width Layout - Centered) */}
+            {/* Card 1: Our Learning Approach */}
             <div className="col-12">
               <div className="p-4 p-md-5 card-mission-box d-flex flex-column align-items-center text-center shadow-sm">
                 <div className="d-flex flex-column align-items-center mb-3">
                   <div 
-        className="mb-2 rounded-circle overflow-hidden d-flex align-items-center justify-content-center" 
-        style={{ width: '80px', height: '80px' }}
-      >
-        <img 
-          src={arrow} 
-          alt="arrow Icon" 
-          className="w-100 h-100" 
-          style={{ objectFit: 'cover' }} 
-        />
-      </div>
+                    className="mb-2 rounded-circle overflow-hidden d-flex align-items-center justify-content-center" 
+                    style={{ width: '80px', height: '80px' }}
+                  >
+                    <img 
+                      src={arrow} 
+                      alt="arrow Icon" 
+                      className="w-100 h-100" 
+                      style={{ objectFit: 'cover' }} 
+                    />
+                  </div>
                   <h4 className="fw-bold m-0" style={{ color: '#FF3B7A' }}>Our Learning Approach</h4>
                 </div>
                 <p className="text-dark fw-medium mb-3" style={{ fontSize: '0.98rem', lineHeight: '1.6', maxWidth: '900px' }}>
@@ -176,21 +172,21 @@ export default function AboutUs() {
               </div>
             </div>
 
-            {/* Card 2: Supporting Every Child (50% Width - Centered) */}
+            {/* Card 2: Supporting Every Child */}
             <div className="col-12 col-lg-6">
               <div className="h-100 p-4 p-md-5 d-flex flex-column align-items-center text-center shadow-sm" style={{ backgroundColor: '#E8F8F5', border: '2px solid #A3E4D7', borderRadius: '24px' }}>
                 <div className="d-flex flex-column align-items-center mb-3">
                   <div 
-        className="mb-2 rounded-circle overflow-hidden d-flex align-items-center justify-content-center" 
-        style={{ width: '80px', height: '80px' }}
-      >
-        <img 
-          src={care} 
-          alt="care Icon" 
-          className="w-100 h-100" 
-          style={{ objectFit: 'cover' }} 
-        />
-      </div>
+                    className="mb-2 rounded-circle overflow-hidden d-flex align-items-center justify-content-center" 
+                    style={{ width: '80px', height: '80px' }}
+                  >
+                    <img 
+                      src={care} 
+                      alt="care Icon" 
+                      className="w-100 h-100" 
+                      style={{ objectFit: 'cover' }} 
+                    />
+                  </div>
                   <h4 className="fw-bold m-0" style={{ color: '#16A085' }}>Supporting Every Child</h4>
                 </div>
                 <p className="text-dark fw-medium m-0" style={{ fontSize: '0.98rem', lineHeight: '1.7' }}>
@@ -199,21 +195,21 @@ export default function AboutUs() {
               </div>
             </div>
 
-            {/* Card 3: Partnering with Parents (50% Width - Centered) */}
+            {/* Card 3: Partnering with Parents */}
             <div className="col-12 col-lg-6">
               <div className="h-100 p-4 p-md-5 d-flex flex-column align-items-center text-center shadow-sm" style={{ backgroundColor: '#FEF9E7', border: '2px solid #F9E79F', borderRadius: '24px' }}>
                 <div className="d-flex flex-column align-items-center mb-3">
-      <div 
-        className="mb-2 rounded-circle overflow-hidden d-flex align-items-center justify-content-center" 
-        style={{ width: '80px', height: '80px' }}
-      >
-        <img 
-          src={shake} 
-          alt="shake Icon" 
-          className="w-100 h-100" 
-          style={{ objectFit: 'cover' }} 
-        />
-      </div>
+                  <div 
+                    className="mb-2 rounded-circle overflow-hidden d-flex align-items-center justify-content-center" 
+                    style={{ width: '80px', height: '80px' }}
+                  >
+                    <img 
+                      src={shake} 
+                      alt="shake Icon" 
+                      className="w-100 h-100" 
+                      style={{ objectFit: 'cover' }} 
+                    />
+                  </div>
                   <h4 className="fw-bold m-0" style={{ color: '#D4AC0D' }}>Partnering with Parents</h4>
                 </div>
                 <p className="text-dark fw-medium m-0" style={{ fontSize: '0.98rem', lineHeight: '1.7' }}>
@@ -223,27 +219,25 @@ export default function AboutUs() {
             </div>
 
             {/* Card 4: Our Promise */}
-<div className="col-12">
-  <div className="p-4 p-md-5 d-flex flex-column align-items-center text-center shadow-sm" style={{ backgroundColor: '#FADBD8', border: '2px solid #F5B7B1', borderRadius: '24px' }}>
-    
-    {/* Centered Circle Image Wrapper */}
-    <div 
-      className="mb-3 rounded-circle overflow-hidden flex-shrink-0 mx-auto" 
-      style={{ width: '90px', height: '90px' }}
-    >
-      <img 
-        src={promise} 
-        alt="Our Promise" 
-        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} 
-      />
-    </div>
+            <div className="col-12">
+              <div className="p-4 p-md-5 d-flex flex-column align-items-center text-center shadow-sm" style={{ backgroundColor: '#FADBD8', border: '2px solid #F5B7B1', borderRadius: '24px' }}>
+                <div 
+                  className="mb-3 rounded-circle overflow-hidden flex-shrink-0 mx-auto" 
+                  style={{ width: '90px', height: '90px' }}
+                >
+                  <img 
+                    src={promise} 
+                    alt="Our Promise" 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} 
+                  />
+                </div>
 
-    <h4 className="fw-bold mb-3" style={{ color: '#C0392B' }}>Our Promise</h4>
-    <p className="text-dark fw-medium mx-auto m-0" style={{ fontSize: '1.05rem', lineHeight: '1.7', maxWidth: '800px' }}>
-      Every child is unique, and every childhood matters. We provide a nurturing environment where curiosity is celebrated, confidence grows, and a love of learning begins.
-    </p>
-  </div>
-</div>
+                <h4 className="fw-bold mb-3" style={{ color: '#C0392B' }}>Our Promise</h4>
+                <p className="text-dark fw-medium mx-auto m-0" style={{ fontSize: '1.05rem', lineHeight: '1.7', maxWidth: '800px' }}>
+                  Every child is unique, and every childhood matters. We provide a nurturing environment where curiosity is celebrated, confidence grows, and a love of learning begins.
+                </p>
+              </div>
+            </div>
 
           </div>
         </div>
