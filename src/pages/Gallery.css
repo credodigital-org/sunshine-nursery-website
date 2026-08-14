@@ -1,14 +1,14 @@
 /* ==========================================================================
-   GALLERY RESPONSIVE STYLESHEET (DESKTOP STRUCTURE FOR MOBILE & TABLETS)
+   GALLERY RESPONSIVE STYLESHEET (ONLY HERO SECTION ADJUSTMENTS)
    ========================================================================== */
 
 /* ==========================================================================
-   TABLET (769px - 1200px)
+   TABLET (769px - 1200px) - HERO ADJUSTMENTS
    ========================================================================== */
 @media (min-width: 769px) and (max-width: 1200px) {
   .gallery-hero-wrapper {
     padding-top: 180px !important;
-    padding-bottom: 60px !important;
+    padding-bottom: 0px !important; /* Set to 0 to flush against pure white */
     min-height: auto !important;
   }
 
@@ -74,106 +74,7 @@
     display: none !important;
   }
 
-  .gallery-filter-bar {
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 10px !important;
-  }
-}
-
-/* ==========================================================================
-   TABLET SMALL (up to 991px)
-   ========================================================================== */
-@media (max-width: 991px) {
-  
-  /* Hero section container adjustments */
-  .gallery-hero-wrapper {
-    padding-top: 170px !important;
-    padding-bottom: 40px !important;
-    min-height: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-  }
-
-  /* FORCES DESKTOP STRUCTURE SIDE-BY-SIDE ON MOBILE */
-  .gallery-hero-row {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    text-align: left !important;
-    flex-wrap: nowrap !important;
-  }
-
-  /* Split row dynamically: Left Side text space */
-  .gallery-text-panel {
-    z-index: 10 !important;
-    margin-bottom: 0px !important;
-    padding-left: 10px !important;
-    padding-right: 5px !important;
-    width: 50% !important;
-    flex: 0 0 50% !important;
-  }
-
-  .gallery-title {
-    padding: 4px 0 !important;
-    font-size: 1.6rem !important;
-    line-height: 1.2 !important;
-  }
-
-  .gallery-lead-text {
-    padding: 5px 0 !important;
-    font-size: 0.8rem !important;
-    line-height: 1.4 !important;
-  }
-
-  /* Repositions the decorative sun safely into a corner */
-  .gallery-decor-sun {
-    left: auto !important;
-    right: -10px !important;
-    top: -45px !important;
-    width: 45px !important;
-    height: 45px !important;
-  }
-
-  /* Split row dynamically: Right Side Masked Image Space */
-  .gallery-image-panel {
-    position: relative !important;
-    width: 50% !important;
-    flex: 0 0 50% !important;
-    display: flex !important;
-    justify-content: flex-end !important;
-    height: 180px !important;
-    margin-top: 0px !important;
-  }
-
-  .gallery-kids-mask {
-    position: absolute !important;
-    top: 0 !important;
-    right: -12px !important;
-    width: 100% !important;
-    max-width: 220px !important;
-    height: 100% !important;           
-    overflow: hidden !important;
-    border-radius: 100% 0% 0% 100% / 50% 0% 0% 50% !important;
-    -webkit-border-radius: 100% 0% 0% 100% / 50% 0% 0% 50% !important;
-    z-index: 4 !important;
-  }
-
-  .gallery-kids-img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: right center !important; 
-  }
-
-  /* Hide raw foreground desktop absolute assets */
-  .gallery-decor-flower1,
-  .gallery-decor-flower2 {
-    display: none !important;
-  }
-
-  /* Forces bottom landscape white waves over the section dividers */
+  /* Bottom landscape wave - pure white transition */
   .gallery-bottom-wave {
     position: absolute !important;
     bottom: -2px !important;
@@ -181,12 +82,149 @@
     width: 100% !important;
     height: auto !important;
     z-index: 5 !important; 
-    filter: drop-shadow(0px -10px 0px #7cdf7f) !important; 
+    filter: drop-shadow(0px -10px 0px #ffffff) !important; 
+  }
+}
+
+/* ==========================================================================
+   MOBILE & SMALL TABLETS (up to 991px) - HERO ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 991px) {
+  
+  /* Hero section container adjustments */
+  .gallery-hero-wrapper {
+    padding-top: 130px !important;
+    padding-bottom: 0px !important; /* Set to 0 to eliminate bottom gap */
+    min-height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
 
-  /* --- GRID FILTER & CARDS RESPONSIVENESS --- */
-  
-  /* Creates horizontal scrollbar for filters on small mobile */
+  /* Clean vertical stack for tablet small / mobile view */
+  .gallery-hero-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+  }
+
+  /* Text panel centered */
+  .gallery-text-panel {
+    z-index: 10 !important;
+    margin-bottom: 1rem !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    text-align: center !important;
+  }
+
+  .gallery-title {
+    padding: 4px 0 !important;
+    font-size: 2.2rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .gallery-lead-text {
+    padding: 5px 0 !important;
+    font-size: 1.1rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Repositions the decorative sun safely into a top corner */
+  .gallery-decor-sun {
+    left: auto !important;
+    right: 10px !important;
+    top: -30px !important;
+    width: 45px !important;
+    height: 45px !important;
+  }
+
+  /* Image Panel adjusted for hero on mobile */
+  .gallery-image-panel {
+    position: relative !important;
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    height: 260px !important;
+    margin-top: 0px !important;
+  }
+
+  .gallery-kids-mask {
+    position: relative !important;
+    top: 0 !important;
+    right: -10px !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    height: 100% !important;       
+    overflow: hidden !important;
+    border-radius: 25px 25px 0 0 !important;
+    -webkit-border-radius: 25px 25px 0 0 !important;
+    z-index: 4 !important;
+  }
+
+  .gallery-kids-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center top !important; 
+  }
+
+  /* Hide raw foreground desktop absolute grass assets */
+  .gallery-decor-flower1,
+  .gallery-decor-flower2 {
+    display: none !important;
+  }
+
+  /* Bottom landscape wave - pure white transition */
+  .gallery-bottom-wave {
+    position: absolute !important;
+    bottom: -12px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    z-index: 5 !important; 
+    filter: drop-shadow(0px -10px 0px #ffffff) !important; 
+  }
+}
+
+/* ==========================================================================
+   SMALL MOBILE (up to 480px) - HERO ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 480px) {
+  .gallery-hero-wrapper {
+    padding-top: 110px !important;
+    padding-bottom: 0px !important;
+  }
+
+  .gallery-title {
+    font-size: 1.8rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .gallery-lead-text {
+    font-size: 0.95rem !important;
+  }
+
+  .gallery-image-panel {
+    height: 220px !important;
+  }
+
+  .gallery-kids-mask {
+    max-width: 100% !important;
+  }
+}
+
+/* ==========================================================================
+   UNTOUCHED ORIGINAL CONTENT & FILTER BAR / LIGHTBOX STYLES
+   ========================================================================== */
+
+/* Filter bar mobile horizontal scroll behavior */
+@media (max-width: 991px) {
   .gallery-filter-bar {
     display: flex !important;
     flex-wrap: nowrap !important;
@@ -198,7 +236,7 @@
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; 
   }
-  
+
   .gallery-filter-bar::-webkit-scrollbar {
     display: none;
   }
@@ -210,13 +248,11 @@
     white-space: nowrap !important;
   }
 
-  /* Cards grid optimization */
   .gallery-grid {
     padding-left: 10px !important;
     padding-right: 10px !important;
   }
 
-  /* Makes gallery grid look extra clean on smaller mobile screens */
   .gallery-card-col {
     margin-bottom: 10px;
   }
@@ -226,28 +262,6 @@
   }
 }
 
-/* Tablet targeted viewport optimization adjustments (Side-by-side scaled up) */
-@media (min-width: 576px) and (max-width: 991px) {
-  .gallery-title {
-    font-size: 2.2rem !important;
-  }
-
-  .gallery-lead-text {
-    font-size: 1rem !important;
-  }
-
-  .gallery-image-panel {
-    height: 260px !important;
-  }
-
-  .gallery-kids-mask {
-    max-width: 340px !important;
-  }
-}
-
-/* ==========================================================================
-   MOBILE (up to 768px)
-   ========================================================================== */
 @media (max-width: 768px) {
   .gallery-filter-bar {
     gap: 6px !important;
@@ -265,42 +279,7 @@
   }
 }
 
-/* ==========================================================================
-   SMALL MOBILE (up to 480px)
-   ========================================================================== */
-@media (max-width: 480px) {
-  .gallery-hero-wrapper {
-    padding-top: 140px !important;
-  }
-
-  .gallery-title {
-    font-size: 1.3rem !important;
-    line-height: 1.2 !important;
-  }
-
-  .gallery-lead-text {
-    font-size: 0.72rem !important;
-  }
-
-  .gallery-image-panel {
-    height: 140px !important;
-  }
-
-  .gallery-kids-mask {
-    max-width: 160px !important;
-  }
-
-  /* Stack 2 per row on small mobiles */
-  .gallery-grid {
-    padding-left: 6px !important;
-    padding-right: 6px !important;
-  }
-}
-
-/* ==========================================================================
-   4K HD GALLERY THUMBNAILS & LIGHTBOX MODAL STYLES
-   ========================================================================== */
-
+/* 4K HD GALLERY THUMBNAILS & LIGHTBOX MODAL STYLES */
 .gallery-card-thumb {
   position: relative;
   width: 100%;

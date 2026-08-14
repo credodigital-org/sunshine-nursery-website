@@ -28,11 +28,11 @@ function Programs() {
 <div 
   className="programs-hero-main"
   style={{ 
-    background: 'linear-gradient(180deg, #15B9FF 0%, #FFFFFF 100%)',
+    background: 'linear-gradient(180deg, #15B9FF 0%, #FFFFFF 90%)',
     fontFamily: "'Fredoka', sans-serif", 
     position: 'relative', 
     overflow: 'hidden',
-    minHeight: '95vh'
+    minHeight: '90vh'
   }}
 >
   <div className="container programs-hero-container-inner">
@@ -63,16 +63,16 @@ function Programs() {
         learning and exploration</p>
       </div>
 
-      {/* RIGHT COLUMN: Asymmetrical Cutout Yellow Background Mask */}
-      <div className="col-12 col-md-6 p-0 d-flex justify-content-end programs-mask-panel">
-        <div className="programs-sweeping-mask">
-          <img 
-            src={kids}
-            className="programs-mask-img"
-            alt="Children playing" 
-          />
-        </div>
-      </div>
+      <div className="col-12 col-md-6 p-0 d-flex programs-mask-panel">
+  <div className="programs-sweeping-mask">
+    <img
+      src={kids}
+      className="programs-mask-img"
+      style={{ objectFit: 'cover', objectPosition: 'center top' }}
+      alt="Children playing"
+    />
+  </div>
+</div>
 
     </div>
   </div>
