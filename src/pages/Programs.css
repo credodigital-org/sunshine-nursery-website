@@ -1,356 +1,202 @@
 /* ==========================================================================
-   PROGRAMS DEFAULT DESKTOP LAYOUT
+   HERO MAIN CONTAINER (MATCHING GALLERY SPECS)
    ========================================================================== */
+
 .programs-hero-main {
-  padding-top: 180px;
-  padding-bottom: 80px;
   position: relative;
-  min-height: 85vh;
-  display: flex;
-  align-items: center;
-}
-
-.programs-hero-container-inner {
-  max-width: 1400px;
-  margin: 0 auto;
   width: 100%;
-}
-
-.programs-desktop-sun {
-  position: absolute;
-  top: -85px;
-  left: 450px;
-  width: 90px;
-  height: 90px;
-}
-
-.programs-desktop-cloud {
-  position: absolute;
-  top: -65px;
-  left: 730px;
-  width: 160px;
-  height: auto;
-  opacity: 0.9;
-  z-index: 1;
-}
-
-.programs-mask-panel {
-  position: relative;
-  height: 480px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.programs-sweeping-mask {
-  width: 100%;
-  max-width: 740px;
-  height: 480px;
-  position: absolute;
-  right: -60px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 4;
-  overflow: hidden;
-  border-radius: 35% 0 0 10% / 100% 0 0 0%;
-  -webkit-border-radius: 35% 0 0 10% / 100% 0 0 0%;
   
-  box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.08);
-}
+  /* Height & Padding aligned with Gallery Hero */
+  min-height: 820px;
+  padding-top: 140px;
+  padding-bottom: 80px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.programs-mask-img {
-  width: 100%;
-  height: 75vh;
-  object-fit: cover !important;
-  object-position: center top !important; /* Preserves children's heads 100% completely */
-  border-radius: 40px 0 0 40px;
-}
-
-.programs-bottom-wave {
-  position: absolute;
-  bottom: 62px; /* Brings it up from -20px to sit flush at the bottom */
-  left: 0;
-  width: 100%;
-  height: auto;
-  z-index: 10; /* Ensures it cleanly overlays the image (z-index: 4) */
-  pointer-events: none; /* Prevents the wave graphic from blocking clicks on buttons/links beneath it */
-}
-
-/* Section header */
-.programs-section-header {
-  text-align: center;
-  font-size: 2.5rem;
-  color: #ED5085;
-  padding: 2rem;
+  /* Edge-to-edge desktop cover (No letterboxing/sidebars) */
+  background: linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), 
+              url('../assets/ProgramsImages/kids.png');
+  background-size: cover !important;
+  background-position: center 30% !important;
+  background-repeat: no-repeat !important;
   font-family: 'Fredoka', sans-serif;
+  box-sizing: border-box;
 }
 
-/* Age group cards */
-.age-group-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Container Inner Positioning */
+.programs-hero-container-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
 }
 
-.age-group-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.1) !important;
+.programs-text-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 15px;
 }
 
 /* ==========================================================================
-   📱 TABLET (769px - 1200px) - HERO BOTTOM PURE WHITE
+   TYPOGRAPHY & TEXT SHADOWS (EXACT GALLERY SIZING)
    ========================================================================== */
-@media (min-width: 769px) and (max-width: 1200px) {
+
+/* Main Title (.programs-hero-title) */
+.programs-hero-title {
+  font-size: clamp(3.2rem, 6.5vw, 4.8rem) !important;
+  line-height: 1.15 !important;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 0.75rem;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.85);
+  letter-spacing: 1px;
+}
+
+/* Lead Heading (.programs-hero-lead) */
+.programs-hero-lead {
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem) !important;
+  font-weight: 700;
+  color: #FFFFFF !important;
+  line-height: 1.4 !important;
+  max-width: 720px;
+  margin-bottom: 0.75rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.85);
+}
+
+/* Subtext Description */
+.programs-hero-subtext {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #F8F9FA;
+  line-height: 1.4;
+  margin: 0 auto;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.85);
+}
+
+/* Vibrant Text Highlights */
+.highlight-pink {
+  color: #FF538A;
+}
+
+.highlight-green {
+  color: #5BE32D;
+}
+
+.highlight-blue {
+  color: #00E5FF;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (MATCHING GALLERY BREAKPOINTS)
+   ========================================================================== */
+
+/* Laptops / Large Screens */
+@media (max-width: 1200px) {
   .programs-hero-main {
-    padding-top: 200px !important;
-    padding-bottom: 0px !important; /* Flush against pure white bottom */
-    min-height: auto !important;
-  }
-
-  .programs-hero-main .programs-hero-row {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    flex-wrap: nowrap !important;
-  }
-
-  .programs-text-panel {
-    width: 50% !important;
-    flex: 0 0 50% !important;
-    max-width: 50% !important;
-  }
-
-  .programs-text-panel h2.programs-text {
-    font-size: 2.2rem !important;
-    line-height: 1.2 !important;
-  }
-
-  .programs-hero-lead {
-    font-size: 1.1rem !important;
-  }
-
-  .programs-desktop-sun {
-    display: block !important;
-    position: absolute !important;
-    left: auto !important;
-    right: 10px !important;
-    top: -70px !important;
-    width: 60px !important;
-    height: 60px !important;
-    z-index: 2 !important;
-  }
-
-  .programs-desktop-cloud {
-    display: none !important;
-  }
-
-  .programs-mask-panel {
-    position: relative !important;
-    width: 50% !important;
-    flex: 0 0 50% !important;
-    max-width: 50% !important;
-    display: flex !important;
-    justify-content: flex-end !important;
-    height: 380px !important;
-    margin: 0 !important;
-  }
-
-  .programs-sweeping-mask {
-    position: absolute !important;
-    top: -30px !important;
-    right: -24px !important;
-    width: 112% !important;
-    max-width: 600px !important;
-    height: 115% !important;
-    margin: 0 !important;
-    transform: none !important;
-    overflow: hidden !important;
-    z-index: 4 !important;
-    border-radius: 35% 0% 0% 0% / 60% 0% 0% 0% !important;
-    -webkit-border-radius: 35% 0% 0% 0% / 60% 0% 0% 0% !important;
-  }
-
-  .programs-mask-img {
-    object-position: center top !important;
-  }
-
-  /* Bottom Wave Override to Pure White Transition */
-  .programs-bottom-wave {
-    position: absolute !important;
-    bottom: 0px !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: auto !important;
-    z-index: 10 !important;
-    filter: drop-shadow(0px -10px 0px #ffffff) !important;
-  }
-
-  .programs-section-header {
-    font-size: 2.2rem !important;
-    padding: 0.75rem !important;
+    min-height: 680px;
+    padding-top: 120px;
+    background-position: center 35% !important;
+    background-size: cover !important;
   }
 }
 
-/* ==========================================================================
-   📱 MOBILE & TABLET SMALL (up to 768px) - HERO BOTTOM PURE WHITE
-   ========================================================================== */
+/* Tablets */
+@media (max-width: 991px) {
+  .programs-hero-main {
+    min-height: 520px;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    /* Pushes background image down so faces align nicely */
+    background-position: center 40% !important;
+    background-size: cover !important;
+  }
+}
+
+/* Small Tablets & Mobile Landscape */
 @media (max-width: 768px) {
   .programs-hero-main {
-    padding-top: 120px !important;    
-    padding-bottom: 0px !important; /* Set to 0 to remove gap */
-    min-height: auto !important;
+    min-height: 420px;
+    padding-top: 90px;
+    padding-bottom: 40px;
+    background-position: center 40% !important;
+    background-size: cover !important;
   }
+}
 
-  .programs-hero-main .programs-hero-row {
-    display: flex !important;
-    flex-direction: column !important;      
-    align-items: center !important; 
-    justify-content: center !important;
-    flex-wrap: wrap !important;
-    width: 100% !important;
-    margin: 0 auto !important;
+/* Mobile Devices */
+@media (max-width: 576px) {
+  .programs-hero-main {
+    min-height: 380px !important;
+    padding-top: 90px !important;
+    padding-bottom: 30px !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    background-position: center 40% !important;
+    background-size: cover !important;
   }
 
   .programs-text-panel {
-    z-index: 10 !important;
-    margin-bottom: 1.5rem !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    width: 100% !important;              
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-    text-align: center !important;
+    padding: 10px 5px;
+    width: 100%;
   }
 
-  .programs-text-panel h2.programs-text {
-    font-size: 2.2rem !important;        
-    line-height: 1.25 !important;
-    margin-bottom: 0.75rem !important;
+  .programs-hero-title {
+    font-size: 2.2rem !important;
+    margin-bottom: 0.5rem !important;
   }
 
   .programs-hero-lead {
-    font-size: 1.15rem !important;       
-    line-height: 1.5 !important;
-    max-width: 100% !important;
-    margin: 0 auto 0.75rem auto !important;
-    padding-bottom: 0px !important;
+    font-size: 1rem !important;
+    margin-bottom: 0.4rem;
   }
 
   .programs-hero-subtext {
-    font-size: 0.95rem !important;
-    line-height: 1.4 !important;
-    margin: 0 auto !important;
-  }
-
-  .programs-desktop-sun {
-    display: block !important;
-    position: absolute !important;
-    left: auto !important;
-    right: 5px !important;
-    top: -25px !important;
-    width: 50px !important;
-    height: 50px !important;
-    z-index: 2 !important;
-  }
-
-  .programs-desktop-cloud {
-    display: none !important;
-  }
-
-  .programs-mask-panel {
-    position: relative !important;
-    width: 100% !important;              
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-    height: 320px !important;
-    margin: 0 auto !important;
-    padding: 0 0.5rem !important;
-  }
-
-  .programs-sweeping-mask {
-    position: relative !important;
-    top: 0 !important;
-    right: 0 !important;             
-    width: 100% !important;
-    max-width: 600px !important;         
-    height: 100% !important;             
-    margin: 0 auto !important;
-    transform: none !important;
-    overflow: hidden !important;
-    z-index: 4 !important;
-    border-radius: 35px 35px 0 0 !important;
-    -webkit-border-radius: 35px 35px 0 0 !important;
-    background-color: #FFB800 !important;
-  }
-
-  .programs-mask-img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;        
-    object-position: center top !important;
-    border-radius: 35px 35px 0 0 !important;
-  }
-
-  /* Bottom Wave Transition Override to Pure White */
-  .programs-bottom-wave {
-    position: absolute !important;
-    bottom: -15px !important;             
-    left: 0 !important;
-    width: 100% !important;
-    height: auto !important;
-    z-index: 5 !important; 
-    filter: drop-shadow(0px -10px 0px #ffffff) !important;
-  }
-
-  .programs-cards-grid {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    background-color: #ffffff !important;
-  }
-
-  .programs-section-header {
-    font-size: 2rem !important;
-    margin-block-end: 2rem !important;
-  }
-
-  .programs-cards-grid .col-12.col-md-6.col-lg-4 {
-    width: 100% !important;
-    max-width: 100% !important;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    max-width: 290px;
   }
 }
 
 /* ==========================================================================
-   📱 SMALL MOBILE (up to 480px)
+   SECTION HEADERS & DECORATIONS
    ========================================================================== */
-@media (max-width: 480px) {
-  .programs-hero-main {
-    padding-top: 110px !important;
-    padding-bottom: 0px !important;
-  }
 
-  .programs-text-panel h2.programs-text {
-    font-size: 1.9rem !important;
-  }
+.programs-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 2.5rem;
+  color: #ED5085;
+  margin-block-end: 3rem;
+  padding: 3rem;
+  text-align: center;
+}
 
-  .programs-hero-lead {
-    font-size: 1.05rem !important;
-  }
+.programs-header-decor {
+  width: 3.968rem;
+  height: 1.106rem;
+}
 
-  .programs-hero-subtext {
-    font-size: 0.9rem !important;
-  }
-
-  .programs-mask-panel {
-    height: 280px !important;
-  }
-
+@media (max-width: 576px) {
   .programs-section-header {
-    font-size: 1.6rem !important;
+    font-size: 1.6rem;
+    padding: 1.6rem 0.5rem;
+    margin-block-end: 1.5rem;
+    gap: 0.4rem;
+    flex-wrap: nowrap;
   }
 
-  .programs-cards-grid {
-    padding-left: 0.75rem !important;
-    padding-right: 0.75rem !important;
+  .programs-header-decor {
+    width: 2.5rem;
+    height: 0.7rem;
+    object-fit: contain;
   }
 }

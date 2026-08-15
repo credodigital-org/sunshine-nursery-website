@@ -1,7 +1,4 @@
 import React from 'react';
-import sun from '../assets/AboutUsImages/sun.png';
-import cloud from '../assets/AboutUsImages/cloud.png';
-import wave from '../assets/AboutUsImages/wave.png';
 import kids from '../assets/ProgramsImages/kids.png';
 import slide from '../assets/HeroImages/slide.jpg';
 import teddy from '../assets/ProgramsImages/teddy.png';
@@ -19,78 +16,48 @@ import scene4 from '../assets/ProgramsImages/scene4.png';
 
 import About from "../sections/About";
 import CTA from '../sections/CTA';
-import './Programs.css'; // Ensure this is imported here!
+import './Programs.css'; 
 
 function Programs() {
   return (
     <div>
-      {/* HERO SECTION CONTAINER */}
-<div 
-  className="programs-hero-main"
-  style={{ 
-    background: 'linear-gradient(180deg, #15B9FF 0%, #FFFFFF 90%)',
-    fontFamily: "'Fredoka', sans-serif", 
-    position: 'relative', 
-    overflow: 'hidden',
-    minHeight: '90vh'
-  }}
->
-  <div className="container programs-hero-container-inner">
-    <div className="row align-items-center programs-hero-row">
-      
-      {/* LEFT COLUMN: Hero Heading Text Block */}
-      <div className="col-12 col-md-6 position-relative mb-5 mb-md-0 programs-text-panel">
-        {sun && (
-          <img 
-            src={sun} 
-            className="programs-desktop-sun"
-            alt="Sun decoration" 
-          />
-        )}
-        <img 
-          src={cloud} 
-          className="programs-desktop-cloud"
-          alt="Cloud decoration" 
-        />
+      {/* HERO SECTION CONTAINER WITH FULL COVER BACKGROUND */}
+      <div 
+        className="programs-hero-main"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url(${kids})`
+        }}
+      >
+        <div className="container programs-hero-container-inner">
+          <div className="row align-items-center justify-content-center text-center programs-hero-row">
+            
+            {/* CENTRAL TEXT OVERLAY */}
+            <div className="col-12 col-lg-10 position-relative programs-text-panel">
+              <h1 className="programs-hero-title">
+                OUR <span className="highlight-pink">PROGRAMS</span>
+              </h1>
+              
+              <p className="programs-hero-lead">
+                Helping Every Child <span className="highlight-green">Learn</span><br/>
+                <span className="highlight-blue">Explore</span> & <span className="highlight-green">Grow</span>
+              </p>
 
-        <h2 className="display-6 fw-bold text-dark m-0 programs-text">OUR <span style={{ color: '#FF3B7A' }}>PROGRAMS</span>{' '}</h2>
-        
-        <p className="fs-5 fw-semibold mb-3 programs-hero-lead" style={{ maxWidth: '420px', color:'#00477C', lineHeight: '1.6', paddingBottom:'2px' }}>
-          <b>Helping Every Child <span style={{ color: '#286a06' }}>Learn</span></b><br/>
-          <b><span style={{ color: '#00477C' }}>Explore</span> <span style={{ color: '#000000' }}> & </span> <span style={{ color: '#286a06' }}> Grow</span></b>
-        </p>
-        <p className="fs-5 fw-semibold mb-5 text-dark programs-hero-subtext">Nurturing young minds through play, <br/>
-        learning and exploration</p>
+              <p className="programs-hero-subtext">
+                Nurturing young minds through play,<br className="d-none d-sm-inline"/> learning and exploration
+              </p>
+            </div>
+
+          </div>
+        </div>
       </div>
 
-      <div className="col-12 col-md-6 p-0 d-flex programs-mask-panel">
-  <div className="programs-sweeping-mask">
-    <img
-      src={kids}
-      className="programs-mask-img"
-      style={{ objectFit: 'cover', objectPosition: 'center top' }}
-      alt="Children playing"
-    />
-  </div>
-</div>
-
-    </div>
-  </div>
-
-  {/* Bottom Layer Curvature Wave */}
-  <img 
-    src={wave} 
-    alt="wave decor" 
-    className="programs-bottom-wave"
-  />
-</div>
-
       {/* SECTION TITLE */}
-      <h2 className="programs-section-header" style={{ textAlign: 'center', fontSize: '2.5rem', color: '#ED5085', marginBlockEnd: '3rem', padding: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
-        <img src={slide} alt="decoration" style={{ width: '3.968rem', height: '1.106rem' }} />
-        Our Programs
-        <img src={slide} alt="decoration" style={{ width: '3.968rem', height: '1.106rem' }} />
-      </h2>
+      {/* SECTION TITLE */}
+<h2 className="programs-section-header">
+  <img src={slide} alt="" className="programs-header-decor" />
+  <span>Our Programs</span>
+  <img src={slide} alt="" className="programs-header-decor" />
+</h2>
 
       {/* CORE AGE GROUPS CLASS LIST SECTIONS */}
       <div className="row g-4 justify-content-center px-4 px-md-5 programs-cards-grid">
@@ -233,7 +200,7 @@ function Programs() {
       {/* SECTION TITLE: Focus Steps */}
       <h2 className="steps-section-header" style={{ textAlign: 'center', fontSize: '2.5rem', color: '#ED5085', marginBlockEnd: '3rem', padding: '4rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
         <img src={slide} alt="decoration" style={{ width: '3.968rem', height: '1.106rem' }} />
-        Our Programs
+        Our Process
         <img src={slide} alt="decoration" style={{ width: '3.968rem', height: '1.106rem' }} />
       </h2>
 

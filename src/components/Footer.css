@@ -3,7 +3,7 @@
    ========================================================================= */
 
 .main-footer-wrapper {
-  font-family: 'sans-serif';
+  font-family: sans-serif;
 }
 
 .footer-logo-box {
@@ -22,7 +22,7 @@
   height: 30px;
 }
 
-/* Base styling for our responsive links */
+/* Base styling for responsive links */
 .footer-links-list {
   color: #4A5568; 
   font-size: 0.95rem;
@@ -37,7 +37,7 @@
   color: #E84E88;
 }
 
-/* Balanced grid columns with dashed borders on desktop layout views */
+/* Dashed borders on desktop layout views */
 .dashed-right-divider {
   border-right: 1.5px dashed #A0AEC0;
   padding-right: 15px;
@@ -48,49 +48,24 @@
   letter-spacing: 0.3px;
 }
 
-/* Optional: Subtle hover effect on the developer's phone number */
 .footer-credits-border a:hover {
   color: #E84E88 !important;
   transition: color 0.2s ease;
 }
 
 /* ==========================================================================
-   TABLET (769px - 1200px)
-   ========================================================================== */
-@media (min-width: 769px) and (max-width: 1200px) {
-  .footer-logo-box {
-    max-width: 240px;
-  }
-
-  .footer-tagline {
-    font-size: 0.88rem;
-  }
-
-  .footer-links-list {
-    font-size: 0.88rem;
-  }
-
-  .main-footer-wrapper .container-fluid {
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
-  }
-}
-
-/* ==========================================================================
-   MOBILE (up to 768px)
+   MOBILE & TABLET ADJUSTMENTS (up to 768px)
    ========================================================================== */
 @media (max-width: 768px) {
-  /* Removes vertical dividing borders when layout columns stack vertically */
-  .dashed-right-divider {
-    border-right: none !important;
-    padding-right: 0 !important;
-    border-bottom: 1px dashed #CBD5E1;
-    padding-bottom: 1.5rem;
+  /* Keep side border between Quick Links and Programs on mobile */
+  .col-6.dashed-right-divider:first-child {
+    border-right: 1px dashed #CBD5E1 !important;
+    padding-right: 10px;
   }
   
-  /* Adds space between columns when stacked */
-  .main-footer-wrapper .col-12 {
-    margin-bottom: 1rem;
+  .col-6.dashed-right-divider:last-child {
+    border-right: none !important;
+    padding-left: 10px;
   }
 
   /* Center all footer content on mobile */
@@ -115,40 +90,13 @@
     font-size: 0.9rem;
   }
 
-  .main-footer-wrapper .d-flex.gap-3.justify-content-center {
-    justify-content: center !important;
-  }
-
-  /* Contact info: center on mobile */
+  /* Contact info centering */
   .main-footer-wrapper .d-flex.flex-column.gap-3 {
     align-items: center !important;
   }
 
-  /* Credits section */
   .footer-credits-border {
     margin-top: 1.5rem !important;
     padding-top: 1rem !important;
-  }
-}
-
-/* ==========================================================================
-   SMALL MOBILE (up to 480px)
-   ========================================================================== */
-@media (max-width: 480px) {
-  .footer-logo-box {
-    max-width: 170px;
-  }
-
-  .footer-tagline {
-    font-size: 0.85rem;
-  }
-
-  .footer-links-list {
-    font-size: 0.88rem;
-  }
-
-  .main-footer-wrapper .container-fluid {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
   }
 }

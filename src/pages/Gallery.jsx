@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import sun from '../assets/AboutUsImages/sun.png';
-import wave from '../assets/AboutUsImages/wave.png';
 import children from '../assets/GalleryImages/children.png';
-import flower1 from '../assets/GalleryImages/flower1.png'; 
-import flower2 from '../assets/GalleryImages/flower2.png'; 
 
 import activity1 from '../assets/GalleryImages/activity1.jpeg';
 import activity2 from '../assets/GalleryImages/activity2.jpeg';
@@ -78,103 +74,39 @@ function Gallery() {
 
   return (
     <>
-      <div className="gallery-hero-wrapper" style={{ 
-        background: 'linear-gradient(95deg, #A8D6FF 100%, #95FB99 0%)',
-        paddingTop: '250px', 
-        paddingBottom: '100px', 
-        fontFamily: "'Fredoka', sans-serif", 
-        position: 'relative', 
-        overflow: 'hidden',
-        minHeight: '95vh'
-      }}>
-        <div className="container">
-          <div className="row align-items-center gallery-hero-row">
+      {/* --- HERO BANNER SECTION --- */}
+      <div 
+        className="gallery-hero-wrapper" 
+        style={{ 
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url(${children})`
+        }}
+      >
+        <div className="container text-center position-relative" style={{ zIndex: 6 }}>
+          <div className="row justify-content-center">
             
-            {/* LEFT COLUMN */}
-            <div className="col-12 col-md-6 position-relative mb-5 mb-md-0 gallery-text-panel">
-              {sun && (
-                <img 
-                  src={sun} 
-                  alt="Sun decoration" 
-                  className="gallery-decor-sun"
-                  style={{ position: 'absolute', top: '-60px', left: '530px', width: '100px', height: '100px' }} 
-                />
-              )}
+            <div className="col-11 col-md-9 col-lg-8 position-relative gallery-text-panel mx-auto text-center">
 
-              <h2 className="display-6 fw-bold text-dark p-3 m-0 gallery-title">OUR <br/>
-                <span style={{ color: '#FF3B7A' }}>G</span>
-                <span style={{ color: '#5FAF37' }}>a</span>
-                <span style={{ color: '#FF3B7A' }}>ll</span>
-                <span style={{ color: '#00477C' }}>e</span>
-                <span style={{ color: '#FF3B7A' }}>r</span>
-                <span style={{ color: '#5FAF37' }}>y</span>
-              </h2>
+              {/* Title with pure white "OUR" */}
+              <h1 className="fw-bold p-0 m-0 gallery-title">
+                <span className="text-white">OUR</span> <br/>
+                <span style={{ color: '#FF538A' }}>G</span>
+                <span style={{ color: '#5BE32D' }}>a</span>
+                <span style={{ color: '#FF538A' }}>ll</span>
+                <span style={{ color: '#00E5FF' }}>e</span>
+                <span style={{ color: '#FF538A' }}>r</span>
+                <span style={{ color: '#5BE32D' }}>y</span>
+              </h1>
 
-              <p className="fs-5 fw-bold p-3 gallery-lead-text" style={{color:'#000000'}}>
-                A glimpse into the joyful learning, <br/>
+              {/* Lead text in pure white */}
+              <p className="fw-bold p-2 mx-auto gallery-lead-text text-white">
+                A glimpse into the joyful learning, <br className="d-none d-sm-inline" />
                 laughter, and love that fill our days.
               </p>
+
             </div>
 
-            {/* RIGHT COLUMN */}
-            <div className="col-12 col-md-6 p-0 d-flex justify-content-end gallery-image-panel">
-              <div className="gallery-kids-mask" style={{
-                width: '100%',
-                maxWidth: '750px',
-                position: 'absolute',
-                right: '0px',
-                top: '100px',
-                bottom: '0px',
-                zIndex: '4',
-                height: '100%',   
-                overflow: 'hidden',
-                borderRadius: '100% 0% 0% 100% / 50% 0% 0% 50%',
-                WebkitBorderRadius: '100% 0% 0% 100% / 50% 0% 0% 50%'
-              }}>
-                <img 
-                  src={children}
-                  alt="Children playing" 
-                  className="gallery-kids-img"
-                  style={{ 
-                    width: '100%', 
-                    height: '100%', 
-                    objectFit: 'contain',
-                    objectPosition: 'right center'
-                  }} 
-                />
-              </div>
-            </div>
-
-          </div>
-
-          {/* Left Grass */}
-          <div className="gallery-decor-flower1" style={{ position: 'absolute', top: '515px', left: '1px', zIndex: 5 }}>
-            <img src={flower1} alt="grass left" style={{ width: '100%', height: '150px' }} />
-          </div>
-
-          {/* Center Grass */}
-          <div className="gallery-decor-flower2" style={{ position: 'absolute', top: '520px', left: '750px', zIndex: '5' }}>
-            <img src={flower2} alt="grass center" style={{ width: '100%', height: '150px' }} />
           </div>
         </div>
-        
-        {/* Wave Layer */}
-        {wave && (
-          <img 
-            src={wave} 
-            alt="wave decor" 
-            className="gallery-bottom-wave"
-            style={{
-              position: 'absolute',
-              bottom: '-2px', 
-              left: '0',
-              width: '100%',
-              height: 'auto',
-              filter: 'drop-shadow(0px -10px 0px #7cdf7f)',
-              zIndex: '5'
-            }}
-          />
-        )}
       </div> 
 
       {/* --- GALLERY FILTER SECTION --- */}
