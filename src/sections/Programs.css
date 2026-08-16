@@ -2,6 +2,11 @@
    PROGRAMS CONTAINER (DESKTOP DEFAULT)
    ========================================================================== */
 
+.programs-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
 .programs-grid {
   display: grid;
   gap: 1.5rem;
@@ -39,6 +44,11 @@
    TABLET (769px - 1350px)
    ========================================================================== */
 @media (max-width: 1350px) {
+  .programs-section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
   .programs-grid {
     grid-auto-flow: row; 
     /* Force columns to match fixed card width (250px) */
@@ -46,7 +56,7 @@
     max-width: 900px;
     margin: 0 auto;
     gap: 1.5rem;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
   }
 }
 
@@ -54,17 +64,23 @@
    TABLET SMALL (769px - 992px)
    ========================================================================== */
 @media (max-width: 992px) {
+  .programs-section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
   .programs-grid {
     grid-template-columns: repeat(auto-fit, 250px);
     max-width: 700px;
-    padding: 0 0.75rem;
+    padding: 0 0.60rem;
     gap: 1.25rem;
+    margin-top: 0.2rem !important; /* Removes bottom blue gap */
   }
-
-  /* REMOVED height & width overrides so cards stay 250px x 250px */
 
   .programs-section h2 {
     font-size: 1.8rem !important;
+    margin-top: 0.2rem !important; /* Removes top blue gap */
+    margin-bottom: 0.3rem !important;
   }
 }
 
@@ -72,6 +88,11 @@
    MOBILE (up to 768px)
    ========================================================================== */
 @media (max-width: 768px) {
+  .programs-section {
+    padding-top: 0.3rem;
+    padding-bottom: 0.5rem;
+  }
+
   .programs-grid {
     /* Center fixed cards nicely in grid */
     grid-template-columns: repeat(auto-fit, 250px);
@@ -79,12 +100,13 @@
     max-width: 100%;
     gap: 1rem;
     padding: 0 0.5rem;
+    margin-top: 0.2rem !important; /* Removes bottom blue gap */
   }
-
-  /* REMOVED height & width overrides so cards stay 250px x 250px */
 
   .programs-section h2 {
     font-size: 1.6rem !important;
+    margin-top: 0.1rem !important; /* Removes top blue gap */
+    margin-bottom: 0.25rem !important;
   }
 
   .programs-section h2 img {
@@ -97,18 +119,24 @@
    SMALL MOBILE (up to 480px)
    ========================================================================== */
 @media (max-width: 480px) {
+  .programs-section {
+    padding-top: 0rem;
+    padding-bottom: 0.5rem;
+  }
+
   .programs-grid {
     grid-template-columns: 250px; /* Single column, exactly 250px wide */
     justify-content: center;
     max-width: 100%;
     margin: 0 auto;
     gap: 1rem;
+    margin-top: 0rem !important; /* Collapses bottom blue gap completely */
   }
-
-  /* REMOVED height & width overrides so cards stay 250px x 250px */
 
   .programs-section h2 {
     font-size: 1.4rem !important;
+    margin-top: 0rem !important; /* Collapses top blue gap completely */
+    margin-bottom: 0.2rem !important;
   }
 
   .programs-section h2 img {

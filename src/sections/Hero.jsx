@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import '../sections/Admission.css';
 import './Hero.css';
 
@@ -7,8 +7,29 @@ import wave from '../assets/HeroImages/wave.jpg';
 import { Link } from 'react-router-dom';
 
 export default function Hero() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        } else {
+          entry.target.classList.remove('is-visible');
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="home" className="hero-section">
+    <section id="home" className="hero-section" ref={sectionRef}>
       <div className="hero-grid-container">
         {/* Background Image Layer */}
         <img 
@@ -57,14 +78,6 @@ export default function Hero() {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Bottom Transition Wave */}
-      <div className="hero-wave-divider">
-        <img
-          src={wave}
-          alt="Transition Wave Divider"
-        />
       </div>
     </section>
   );

@@ -2,8 +2,9 @@
    WHY CHOOSE US CONTAINER (DESKTOP DEFAULT LOOK)
    ========================================================================== */
 
-.about-section {
-  font-family: sans-serif;
+.about-section a {
+  text-decoration: none !important;
+  color: inherit;
 }
 
 /* Keeps the clean separating line cleanly locked strictly on desktop views */

@@ -11,51 +11,57 @@
   padding: 0;
 }
 
-/* CSS Grid stacks the image and content overlay in the exact same cell */
+/* Grid stacks image and text directly on top of each other */
 .hero-grid-container {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   width: 100%;
   position: relative;
+  min-height: 650px;
 }
 
-/* Base Image - fully rendered */
+/* Base Image: Ensures 100% visibility without cropping */
 .hero-bg-img {
   grid-column: 1 / -1;
   grid-row: 1 / -1;
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center center;
 }
 
-/* Content Container Overlay directly over the background image */
+/* Content Container Overlay (INCREASED MAX-WIDTH & PADDING) */
 .hero-container-inner {
   grid-column: 1 / -1;
   grid-row: 1 / -1;
   z-index: 2;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1600px; /* INCREASED from 1400px */
   margin: 0 auto;
   box-sizing: border-box;
+  
   display: flex;
-  justify-content: center; /* Centers block horizontally */
+  justify-content: center;
   align-items: flex-start;
-  padding: 10rem 4rem 2rem 4rem;
+  
+  padding: clamp(2rem, 8vw, 10rem) 1.5rem 1.5rem 1.5rem; /* INCREASED inner padding */
 }
 
+/* Expanded Text Block Container */
 .hero-text-block {
-  max-width: 44rem;
+  max-width: 56rem; /* INCREASED from 48rem to allow a larger spread */
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center; /* Centers title, subtitle, and button horizontally */
-  text-align: center;  /* Centers individual text lines (h1, h2) */
+  align-items: center;
+  text-align: center;
 }
 
-/* Ensure button wrapper is centered as well */
+/* Ensure button wrapper is centered */
 .hero-btn-wrapper {
   display: flex;
   justify-content: center;
@@ -63,159 +69,262 @@
   width: 100%;
 }
 
-/* Wave Divider */
-.hero-wave-divider {
-  position: absolute;
-  bottom: -2px;
-  left: 0;
+
+/* ==========================================================================
+   TYPOGRAPHY & TEXT STYLES (SCALED UP FOR ALL VIEWPORTS)
+   ========================================================================== */
+
+/* Increased text block max-width so larger text wraps naturally */
+.hero-text-block {
+  max-width: 64rem; /* Increased from 56rem */
   width: 100%;
-  line-height: 0;
-  z-index: 3;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
 }
 
-.hero-wave-divider img {
-  width: 100%;
-  height: 60px;
-  max-height: 130px;
-  display: block;
-}
-
-/* --- LOGO COLOR ACCENTS & CONTRAST --- */
+/* 1. Main Title - Scaled up min, ideal, and max sizes */
 .hero-title {
   font-family: 'Fredoka', sans-serif;
-  font-size: clamp(2.5rem, 4.5vw, 3.8rem);
+  font-size: clamp(1.8rem, 5.5vw, 5rem); /* Scaled up from clamp(1.4rem, 4.5vw, 4.2rem) */
   line-height: 1.1;
-  margin-block-end: 0.5rem;
-  color: #ffffff;
-  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8), 0 2px 5px rgba(0, 0, 0, 0.6);
+  margin-block-end: 0.6rem;
 }
 
-.hero-welcome,
-.hero-brand-name,
+/* "Welcome to" */
+.hero-welcome {
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #121829 !important;
+  text-shadow: 
+    0 0 4px #ffffff,
+    0 0 8px #ffffff,
+    0 0 12px #ffffff;
+}
+
+/* "Sunshine Nursery" */
 .hero-brand-name span {
   font-weight: 800;
-  letter-spacing: 1px;
-  color: #ffffff !important;
-  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8), 0 2px 5px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.5px;
+  -webkit-text-stroke: 4px #ffffff;
+  paint-order: stroke fill;
+  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.3));
 }
 
-.clr-pink,
-.clr-blue,
-.clr-olive,
-.clr-orange,
-.clr-magenta,
-.clr-midblue,
-.clr-green,
-.clr-skyblue {
-  color: #ffffff !important;
-}
+/* Specific vibrant colors for each letter */
+.clr-pink     { color: #E91E63 !important; }
+.clr-blue     { color: #00AEEF !important; }
+.clr-olive    { color: #8CC63F !important; }
+.clr-orange   { color: #FF9800 !important; }
+.clr-magenta  { color: #EC008C !important; }
+.clr-midblue  { color: #1B75BC !important; }
+.clr-green    { color: #39B54A !important; }
+.clr-skyblue  { color: #00B9F2 !important; }
 
+/* 2. Subtitle - Scaled up */
 .hero-description {
-  font-size: clamp(0.95rem, 1.8vw, 1.2rem);
+  font-size: clamp(1rem, 2.5vw, 1.85rem); /* Scaled up from clamp(0.8rem, 2vw, 1.5rem) */
+  color: #011f43 !important;
+  margin-block-end: 0.85rem;
+  line-height: 1.25;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.95);
+}
+
+/* 3. Button & Button Text - Scaled up */
+.admission-btn {
+  padding: clamp(0.55rem, 1.4vw, 0.95rem) clamp(1.3rem, 2.5vw, 2.2rem);
+  border-radius: 50px;
+  border: 3px solid #ffffff;
+  background-color: #78B833;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.admission-btn:hover {
+  background-color: #68A329;
+  transform: translateY(-2px);
+}
+
+.btn-text {
+  font-size: clamp(0.95rem, 1.6vw, 1.3rem); /* Scaled up from clamp(0.8rem, 1.4vw, 1.15rem) */
+  font-weight: 700;
   color: #ffffff !important;
-  margin-block-end: 1rem;
-  line-height: 1.4;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85), 0 1px 4px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 /* ==========================================================================
-   TABLET RESPONSIVE OVERLAY (769px - 1200px)
+   DESKTOP ONLY (1025px and above)
    ========================================================================== */
-@media (min-width: 769px) and (max-width: 1200px) {
-  /* Increases height of the background image on tablets */
+@media (min-width: 1025px) {
+  /* Center background image */
   .hero-bg-img {
-    height: 60vh !important;
-    min-height: 520px !important;
-    object-fit: cover !important;
-    object-position: center bottom !important;
+    object-position: center center;
   }
 
+  /* Center overlay horizontally, align to top to shift content higher */
   .hero-container-inner {
-    padding: 6rem 2rem 2rem 2rem;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    padding-top: 8.5rem !important; /* Slightly reduced top padding to accommodate larger container height */
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
 
+  /* Center text block */
   .hero-text-block {
-    max-width: 65%;
-  }
-}
-
-/* ==========================================================================
-   MOBILE RESPONSIVE OVERLAY (up to 768px)
-   ========================================================================== */
-@media (max-width: 768px) {
-  /* Increases height of the background image on mobile */
-  .hero-bg-img {
-    height: 70vh !important;
-    min-height: 480px !important;
-    object-fit: cover !important;
-    object-position: center bottom !important;
+    align-items: center !important;
+    text-align: center !important;
+    max-width: 56rem; /* Matches enlarged desktop container width */
   }
 
-  .hero-container-inner {
-    padding: 4.5rem 1rem 1rem 1rem;
-    justify-content: center;
-  }
-
-  .hero-text-block {
-    max-width: 100%;
-    align-items: center;
-    text-align: center;
-  }
-
-  .hero-title {
-    font-size: clamp(1.6rem, 5.5vw, 2.3rem);
-    margin-block-end: 0.3rem;
-  }
-
-  .hero-description {
-    font-size: clamp(0.85rem, 3.2vw, 1rem);
-    margin-block-end: 0.8rem;
-  }
-
+  /* Center button wrapper */
   .hero-btn-wrapper {
-    justify-content: center;
+    justify-content: center !important;
+  }
+}
+
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS (MOBILE & TABLET ADJUSTMENTS)
+   ========================================================================== */
+
+/* Tablets (769px - 1024px) */
+@media (max-width: 1024px) {
+  .hero-grid-container {
+    height: 70vh;
+    min-height: 580px;
   }
 
-  .admission-btn {
-    padding: 0.55rem 1.1rem;
-    min-width: 130px;
+  .hero-bg-img {
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center bottom;
   }
 
-  .btn-text {
-    font-size: 0.85rem;
+  .hero-container-inner {
+    padding-top: clamp(4rem, 14vw, 8rem) !important;
+  }
+}
+
+/* Mobile Devices (up to 768px) */
+@media (max-width: 768px) {
+  .hero-grid-container {
+    height: 65vh;
+    min-height: 520px;
+  }
+
+  .hero-container-inner {
+    padding-top: clamp(3rem, 11vw, 6rem) !important;
+  }
+
+  .hero-title {
+    margin-block-end: 0.2rem;
+  }
+
+  .hero-description {
+    margin-block-end: 0.35rem;
+  }
+}
+
+/* Small Mobile (up to 480px) */
+@media (max-width: 480px) {
+  .hero-grid-container {
+    height: 60vh;
+    min-height: 450px;
+  }
+
+  .hero-container-inner {
+    padding-top: clamp(2rem, 8vw, 4rem) !important;
   }
 }
 
 /* ==========================================================================
-   SMALL MOBILE (up to 480px)
+   SCROLL-TRIGGERED 3D LETTER REVEAL
    ========================================================================== */
-@media (max-width: 480px) {
-  /* Maintains tall background height for small handheld screens */
-  .hero-bg-img {
-    height: 75vh !important;
-    min-height: 440px !important;
-    object-fit: cover !important;
-    object-position: center bottom !important;
-  }
 
-  .hero-container-inner {
-    padding: 3.8rem 0.5rem 0.5rem 0.5rem;
+@keyframes letter3DReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(35px) rotateX(-90deg) scale(0.6);
+    filter: blur(4px);
   }
+  70% {
+    opacity: 1;
+    transform: translateY(-4px) rotateX(10deg) scale(1.05);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg) scale(1);
+    filter: blur(0px);
+  }
+}
 
-  .hero-title {
-    font-size: clamp(1.3rem, 6vw, 1.8rem);
+@keyframes lineFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
   }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  .hero-description {
-    font-size: 0.82rem;
-    margin-block-end: 0.5rem;
-  }
+/* Base opacity prior to scroll trigger */
+.hero-welcome,
+.hero-brand-name span,
+.hero-description,
+.hero-btn-wrapper {
+  opacity: 0;
+}
 
-  .admission-btn {
-    padding: 0.45rem 0.95rem;
-  }
+/* 1. "Welcome to" */
+.hero-section.is-visible .hero-welcome {
+  display: inline-block;
+  animation: lineFadeIn 0.6s ease-out 0.1s forwards;
+}
 
-  .btn-text {
-    font-size: 0.8rem;
-  }
+/* 2. "Sunshine Nursery" 3D letter stagger */
+.hero-brand-name {
+  perspective: 600px;
+  display: inline-block;
+}
+
+.hero-section.is-visible .hero-brand-name span {
+  display: inline-block;
+  animation: letter3DReveal 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  will-change: transform, opacity;
+}
+
+/* Stagger delays per letter */
+.hero-section.is-visible .hero-brand-name span:nth-of-type(1)  { animation-delay: 0.25s; }
+.hero-section.is-visible .hero-brand-name span:nth-of-type(2)  { animation-delay: 0.32s; }
+.hero-section.is-visible .hero-brand-name span:nth-of-type(3)  { animation-delay: 0.39s; }
+.hero-section.is-visible .hero-brand-name span:nth-of-type(4)  { animation-delay: 0.46s; }
+.hero-section.is-visible .hero-brand-name span:nth-of-type(5)  { animation-delay: 0.53s; }
+.hero-section.is-visible .hero-brand-name span:nth-of-type(6)  { animation-delay: 0.60s; }
+.hero-section.is-visible .hero-brand-name span:nth-of-type(7)  { animation-delay: 0.67s; }
+.hero-section.is-visible .hero-brand-name span:nth-of-type(8)  { animation-delay: 0.74s; }
+
+.hero-section.is-visible .hero-brand-name span:nth-of-type(9)  { animation-delay: 0.88s; }
+.hero-section.is-visible .hero-brand-name span:nth-of-type(10) { animation-delay: 0.95s; }
+.hero-section.is-visible .hero-brand-name span:nth-of-type(11) { animation-delay: 1.02s; }
+.hero-section.is-visible .hero-brand-name span:nth-of-type(12) { animation-delay: 1.09s; }
+.hero-section.is-visible .hero-brand-name span:nth-of-type(13) { animation-delay: 1.16s; }
+.hero-section.is-visible .hero-brand-name span:nth-of-type(14) { animation-delay: 1.23s; }
+.hero-section.is-visible .hero-brand-name span:nth-of-type(15) { animation-delay: 1.30s; }
+
+/* 3. Subtitle & Button */
+.hero-section.is-visible .hero-description {
+  animation: lineFadeIn 0.6s ease-out 1.45s forwards;
+}
+
+.hero-section.is-visible .hero-btn-wrapper {
+  animation: lineFadeIn 0.6s ease-out 1.65s forwards;
 }

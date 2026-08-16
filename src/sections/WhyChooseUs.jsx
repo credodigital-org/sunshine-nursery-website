@@ -88,11 +88,11 @@ export default function AboutSection() {
             <p className="text-muted lh-lg mb-4">
               At Sunshine Nursery, we believe that every child deserves a joyful beginning. Our nurturing environment is designed to inspire curiosity, build confidence, and encourage a lifelong love of learning. From their very first days with us, children are supported, respected, and encouraged to grow at their own pace.
             </p>
-            <Link to="/about">
-            <button className="btn text-white px-4 py-2 rounded-pill mb-4" style={{ backgroundColor: '#E84E88', fontWeight: '600' }}>
-              Learn More About Us &rarr;
-            </button>
-            </Link>
+            <Link to="/about" className="text-decoration-none d-block w-100">
+  <button className="btn text-white px-4 py-2 rounded-pill mb-4" style={{ backgroundColor: '#E84E88', fontWeight: '600' }}>
+    Learn More About Us &rarr;
+  </button>
+</Link>
 
             {/* BIG ILLUSTRATION CONTAINER */}
             {/* 3. Replaced inline dimensional properties with cleanly responsive fluid classes */}

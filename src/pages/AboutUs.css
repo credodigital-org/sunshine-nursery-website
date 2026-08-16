@@ -1,560 +1,207 @@
-/* ==========================================================================
-   HERO / HEADER HERO SECTION (BASE DESKTOP STRUCTURE - UNTOUCHED)
-   ========================================================================== */
-.about-hero-container {
-  background-color: #E3F2FD;
-  padding-top: 190px;
-  padding-bottom: 100px;
-  font-family: 'Fredoka', sans-serif;
+/* Page Wrapper - Adds top space so content doesn't tuck under sticky navbar */
+.about-us-page {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+  padding-top: 150px; /* Offset for fixed top navbar */
+}
+
+/* Colors */
+.text-pink { color: #E84E88; }
+.text-teal { color: #16A085; }
+.text-gold { color: #D4AC0D; }
+.text-red { color: #C0392B; }
+
+.bg-green { background-color: #5CB85C; }
+.bg-gold { background-color: #E4B63C; }
+.bg-pink { background-color: #EC4B82; }
+.bg-purple { background-color: #8E44AD; }
+.bg-blue { background-color: #0A84FF; }
+
+/* Main Heading */
+.story-main-heading {
+  color: #FF3B7A;
   position: relative;
-  overflow: hidden;
-  min-height: 95vh;
-  display: flex;
-  align-items: center;
-}
-
-.about-hero-container-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.about-hero-tagline {
-  max-width: 420px;
-  line-height: 1.6;
-}
-
-/* Decorative background elements */
-.decor-sun {
-  position: absolute;
-  top: -70px;
-  left: 560px;
-  width: 100px;
-  height: 100px;
-}
-
-.decor-cloud {
-  position: absolute;
-  top: 100px;
-  left: 670px;
-  width: 170px;
-  height: auto;
-  opacity: 0.9;
+  display: inline-block;
+  font-size: clamp(2rem, 4vw, 3rem);
   z-index: 1;
 }
 
-.about-mask-panel {
-  position: relative;
-  height: 480px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+.story-main-heading::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #FF3B7A;
+  border-radius: 2px;
+  margin: 10px auto 0 auto;
 }
 
-/* Large Sweeping Image Mask Block */
-.about-sweeping-mask-wrapper {
-  width: 100%;
-  max-width: 900px;
-  position: relative;
-  z-index: 4;
-  margin-top: -120px;
-  margin-right: -100px;
-  height: 570px;
-  border-top-left-radius: 70%;
-  border-bottom-left-radius: 50%;
-  overflow: hidden;
-  background-color: #FFB800;
-  transform: translateY(100px);
+/* Image & Text */
+.story-img-wrapper {
+  max-width: 100%;
 }
 
-.about-mask-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover !important;
-  object-position: center top !important;
+.story-main-img {
+  object-fit: cover;
+  max-height: 480px;
+  border-radius: 16px;
 }
 
-.decor-bottom-wave {
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: auto;
-  z-index: 8;
-  filter: drop-shadow(0px -10px 0px #7cdf7f);
-  pointer-events: none;
+/* COMPACT FONT SIZE & BALANCED MARGINS */
+.story-text {
+  line-height: 1.55;
+  font-weight: 400;
+  font-size: clamp(0.75rem, 1.1vw, 2.0rem); 
+  color: #555 !important;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* ==========================================================================
-   FEATURE CHIPS, STORY & CORE VALUES (BASE DESKTOP STRUCTURE - UNTOUCHED)
-   ========================================================================== */
-.about-story-container {
-  background-color: #FFFFFF;
-  padding-top: 80px;
-  padding-bottom: 80px;
-  font-family: 'Fredoka', sans-serif;
+/* Feature Cards */
+.card-feature-box {
+  border-radius: 24px;
+  border: 2px solid #FADBD8;
+  background-color: #FDEDEC;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.feature-icon-circle {
-  width: 60px;
-  height: 60px;
+.card-feature-box:hover {
+  transform: translateY(-4px);
+}
+
+.card-teal {
+  background-color: #E8F8F5;
+  border-color: #A3E4D7;
+}
+
+.card-yellow {
+  background-color: #FEF9E7;
+  border-color: #F9E79F;
+}
+
+.card-red {
+  background-color: #FADBD8;
+  border-color: #F5B7B1;
+}
+
+.icon-circle {
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-right: 1rem;
 }
 
-.story-heading-underline {
-  color: #FF3B7A;
-  text-decoration: underline;
-  text-underline-offset: 8px;
-}
-
-/* Mission & Vision Boxes */
-.card-mission-box {
-  background-color: #FFE1EA;
-  border: 2px solid #FFB7CE;
-  border-radius: 24px;
-  min-height: 160px;
-}
-
-.card-vision-box {
-  background-color: #D2EAFF;
-  border: 2px solid #99CFFF;
-  border-radius: 24px;
-  min-height: 160px;
-}
-
-/* ==========================================================================
-   TEAM & SPECIAL FEATURES SECTIONS (BASE DESKTOP STRUCTURE - UNTOUCHED)
-   ========================================================================== */
-.special-icon-wrapper {
+.circle-lg {
   width: 85px;
   height: 85px;
 }
 
+.card-paragraph {
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 900px;
+}
+
+.card-subheading {
+  font-size: 0.95rem;
+}
+
+.card-list {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 850px;
+  text-align: left;
+}
+
+.max-w-800 {
+  max-width: 800px;
+}
+
+.object-fit-cover { object-fit: cover; }
+.object-fit-contain { object-fit: contain; }
+
+/* Special Section */
+.section-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.special-icon-wrapper {
+  width: 90px;
+  height: 90px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.special-icon-wrapper:hover {
+  transform: scale(1.08);
+}
+
+.special-item-title {
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.special-item-desc {
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Team Section */
 .team-card-wrapper {
-  background-color: #FFEBF1;
-  border: 1px solid #FFC2D6;
-  border-radius: 24px;
-  max-width: 340px;
-  margin: 0 auto;
-  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-color: #ffffff;
+  border: 1px solid #f0f0f0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .team-card-wrapper:hover {
   transform: translateY(-6px);
-  box-shadow: 0 14px 28px rgba(232, 78, 136, 0.18);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
 }
 
 .team-avatar-box {
-  width: 155px;
-  height: 155px;
-  border: 5px solid #FFFFFF;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-  background-color: #FFF;
-  position: relative;
-  overflow: hidden;
-  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-.team-avatar-box img {
-  width: 100%;
-  height: 100%;
+.team-avatar-img {
   object-fit: cover;
   object-position: center top;
-  image-rendering: -webkit-optimize-contrast;
-  transform: scale(1.02);
-  transition: transform 0.3s ease;
 }
 
-.team-card-wrapper:hover .team-avatar-box img {
-  transform: scale(1.08);
+.team-name { font-size: 1.25rem; }
+.team-role { font-size: 0.95rem; }
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) { /* Tablets */
+  .story-text {
+    font-size: 0.8125rem !important; /* ~13px */
+    line-height: 1.5;
+    padding: 0 15px;
+  }
 }
 
-/* ==========================================================================
-   TABLET (769px - 1200px) - HERO BOTTOM PURE WHITE
-   ========================================================================== */
-@media (min-width: 769px) and (max-width: 1200px) {
-  .about-hero-container {
-    padding-top: 200px !important;
-    padding-bottom: 0px !important; /* Set to 0 to flush against pure white */
-    min-height: auto !important;
-    background-color: #E3F2FD !important;
+@media (max-width: 575.98px) { /* Mobile Devices */
+  .about-us-page {
+    padding-top: 100px;
   }
-
-  .about-hero-container .about-hero-row {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    flex-wrap: nowrap !important;
+  .story-text {
+    font-size: 0.775rem !important; /* ~12.4px */
+    line-height: 1.48;
+    padding: 0 8px;
   }
-
-  .about-text-panel {
-    width: 50% !important;
-    flex: 0 0 50% !important;
-    max-width: 50% !important;
+  .card-feature-box {
+    padding: 1.5rem !important;
   }
-
-  .about-text-title {
-    font-size: 1.6rem !important;
-  }
-
-  .about-main-heading {
-    font-size: 2.2rem !important;
-    line-height: 1.2 !important;
-  }
-
-  .about-hero-tagline {
-    font-size: 1.1rem !important;
-    line-height: 1.5 !important;
-  }
-
-  .about-feature-row {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    gap: 0.5rem !important;
-  }
-
-  .about-feature-row .col-6 {
-    width: 50% !important;
-    max-width: 50% !important;
-    flex: 0 0 50% !important;
-    padding-left: 0.25rem !important;
-    padding-right: 0.25rem !important;
-  }
-
-  .decor-sun {
-    display: block !important;
-    position: absolute !important;
-    left: auto !important;
-    right: 10px !important;
-    top: -70px !important;
-    width: 60px !important;
-    height: 60px !important;
-    z-index: 2 !important;
-  }
-
-  .decor-cloud {
-    display: none !important;
-  }
-
-  .about-mask-panel {
-    position: relative !important;
-    width: 50% !important;
-    flex: 0 0 50% !important;
-    max-width: 50% !important;
-    display: flex !important;
-    justify-content: flex-end !important;
-    height: 380px !important;
-    margin: 0 !important;
-  }
-
-  .about-sweeping-mask-wrapper {
-    position: absolute !important;
-    top: -30px !important;
-    right: -24px !important;
-    width: 112% !important;
-    max-width: 600px !important;
-    height: 115% !important;
-    margin: 0 !important;
-    transform: none !important;
-    overflow: hidden !important;
-    z-index: 4 !important;
-    border-radius: 35% 0% 0% 0% / 60% 0% 0% 0% !important;
-    -webkit-border-radius: 35% 0% 0% 0% / 60% 0% 0% 0% !important;
-  }
-
-  .about-mask-img {
-    object-position: center top !important;
-  }
-
-  /* Bottom Wave Transition Override to Pure White */
-  .decor-bottom-wave {
-    filter: drop-shadow(0px -10px 0px #ffffff) !important;
-  }
-
-  .feature-icon-circle {
-    width: 44px;
-    height: 44px;
-    margin-right: 0.5rem;
-  }
-
-  .feature-icon-circle img {
-    width: 45px !important;
-    height: 45px !important;
-  }
-
-  .feature-title {
-    font-size: 0.85rem;
-  }
-
-  .feature-desc {
-    font-size: 0.7rem;
-  }
-
-  .about-story-container {
-    padding-top: 30px !important;
-    padding-bottom: 60px;
-    background-color: #ffffff !important;
-  }
-
-  .about-story-container .row:first-child .col-12:last-child {
-    text-align: center;
-    padding-left: 12px !important;
-  }
-
-  .about-story-container h2.display-6 {
-    font-size: 2rem !important;
-    margin-top: 1rem;
-    text-align: center;
-  }
-
-  .about-story-container p.fs-5 {
-    font-size: 0.98rem !important;
-    line-height: 1.6 !important;
-    text-align: center;
-  }
-
   .special-icon-wrapper {
-    width: 70px;
-    height: 70px;
+    width: 75px;
+    height: 75px;
+    padding: 12px;
   }
-}
-
-/* ==========================================================================
-   MOBILE & SMALL TABLETS (up to 768px) - HERO BOTTOM PURE WHITE
-   ========================================================================== */
-@media (max-width: 768px) {
-  .about-hero-container {
-    padding-top: 120px !important;
-    padding-bottom: 0px !important; /* Set to 0 to eliminate bottom gap */
-    min-height: auto !important;
-    background-color: #E3F2FD !important;
-  }
-
-  .about-hero-container .about-hero-row {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-wrap: wrap !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-  }
-
-  .about-text-panel {
-    z-index: 10 !important;
-    margin-bottom: 1.5rem !important;
-    padding-left: 0.5rem !important;
-    padding-right: 0.5rem !important;
-    width: 100% !important;
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-    text-align: center !important;
-  }
-
-  .about-text-title {
-    font-size: 1.8rem !important;
-    margin-bottom: 0 !important;
-  }
-
-  .about-main-heading {
-    font-size: 2.2rem !important;
-    line-height: 1.25 !important;
-    margin-bottom: 0.75rem !important;
-  }
-
-  .about-hero-tagline {
-    font-size: 1.15rem !important;
-    line-height: 1.5 !important;
-    max-width: 100% !important;
-    margin: 0 auto 1.25rem auto !important;
-    padding-bottom: 0px !important;
-    text-align: center !important;
-  }
-
-  .about-feature-row {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    justify-content: center !important;
-    align-items: flex-start !important;
-    gap: 0.25rem !important;
-    margin-bottom: 0.5rem !important;
-    width: 100% !important;
-  }
-
-  .about-feature-row .col-6 {
-    width: 50% !important;
-    max-width: 50% !important;
-    flex: 0 0 50% !important;
-    text-align: left !important;
-    padding-left: 0.25rem !important;
-    padding-right: 0.25rem !important;
-  }
-
-  .decor-sun {
-    display: block !important;
-    position: absolute !important;
-    left: auto !important;
-    right: 5px !important;
-    top: -25px !important;
-    width: 50px !important;
-    height: 50px !important;
-    z-index: 2 !important;
-  }
-
-  .decor-cloud {
-    display: none !important;
-  }
-
-  .about-mask-panel {
-    position: relative !important;
-    width: 100% !important;
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-    height: 320px !important;
-    margin: 0 auto !important;
-    padding: 0 0.5rem !important;
-  }
-
-  .about-sweeping-mask-wrapper {
-    position: relative !important;
-    top: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-    max-width: 600px !important;
-    height: 100% !important;
-    margin: 0 auto !important;
-    transform: none !important;
-    overflow: hidden !important;
-    z-index: 4 !important;
-    border-radius: 35px 35px 0 0 !important;
-    -webkit-border-radius: 35px 35px 0 0 !important;
-    background-color: #FFB800 !important;
-  }
-
-  .about-mask-img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center top !important;
-    border-radius: 35px 35px 0 0 !important;
-  }
-
-  /* Bottom Wave Transition Override to Pure White */
-  .decor-bottom-wave {
-    position: absolute !important;
-    bottom: -12px !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: auto !important;
-    z-index: 5 !important;
-    filter: drop-shadow(0px -10px 0px #ffffff) !important;
-  }
-
-  .feature-icon-circle {
-    width: 38px;
-    height: 38px;
-    margin-right: 0.35rem;
-  }
-
-  .feature-icon-circle img {
-    width: 38px !important;
-    height: 38px !important;
-  }
-
-  .feature-title {
-    font-size: 0.8rem;
-    line-height: 1.1;
-  }
-
-  .feature-desc {
-    font-size: 0.65rem;
-    line-height: 1.15;
-  }
-
-  .about-story-container {
-    padding-top: 20px !important;
-    padding-bottom: 40px;
-    background-color: #ffffff !important;
-  }
-
-  .about-story-container .row:first-child .col-12 {
-    text-align: center !important;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
-  }
-
-  .about-story-container h2.display-6 {
-    font-size: 1.75rem !important;
-    text-align: center !important;
-    margin-top: 0.75rem;
-    margin-bottom: 0.5rem !important;
-  }
-
-  .about-story-container p.fs-5 {
-    font-size: 0.9rem !important;
-    line-height: 1.55 !important;
-    text-align: center !important;
-    margin-top: 0.5rem !important;
-  }
-}
-
-/* ==========================================================================
-   SMALL MOBILE (up to 480px)
-   ========================================================================== */
-@media (max-width: 480px) {
-  .about-hero-container {
-    padding-top: 110px !important;
-    padding-bottom: 0px !important;
-  }
-
-  .about-main-heading {
-    font-size: 1.9rem !important;
-  }
-
-  .about-hero-tagline {
-    font-size: 1.05rem !important;
-  }
-
-  .about-mask-panel {
-    height: 280px !important;
-  }
-
-  .feature-icon-circle {
-    width: 32px;
-    height: 32px;
-    margin-right: 0.25rem;
-  }
-
-  .feature-icon-circle img {
-    width: 32px !important;
-    height: 32px !important;
-  }
-
-  .feature-title {
-    font-size: 0.72rem;
-  }
-
-  .feature-desc {
-    font-size: 0.6rem;
-  }
-
-  .special-icon-wrapper {
-    width: 55px;
-    height: 55px;
-  }
-
   .team-avatar-box {
-    width: 110px;
-    height: 110px;
+    width: 120px;
+    height: 120px;
   }
 }

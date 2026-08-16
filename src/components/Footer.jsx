@@ -31,10 +31,9 @@ export default function FooterSection() {
             </p>
             {/* Social Icons */}
             <div className="d-flex gap-3 justify-content-center fs-5">
-              
               <span className="social-icon-span">
                 <a href="https://www.facebook.com/share/1E8VDTNZeF/" target="_blank" 
-                rel="noopener noreferrer" aria-label="Visit Sunshine Nursery on Instagram">
+                rel="noopener noreferrer" aria-label="Visit Sunshine Nursery on Facebook">
                   <img src={facebook} alt="facebook" className="w-100 h-100" style={{ objectFit: 'contain' }} />
                 </a>
               </span> 
@@ -47,28 +46,35 @@ export default function FooterSection() {
             </div>
           </div>
 
-          {/* COLUMN 2: QUICK LINKS */}
-          <div className="col-12 col-md-2 dashed-right-divider">
-            <h5 className="fw-bold text-dark mb-3" style={{ fontSize: '1.1rem' }}>Quick Links</h5>
-            <ul className="list-unstyled d-flex flex-column gap-2 fw-medium footer-links-list">
-              <li onClick={() => { navigate('/'); window.scrollTo(0, 0); }}>Home</li>
-              <li onClick={() => { navigate('/about'); window.scrollTo(0, 0); }}>About Us</li>
-              <li onClick={() => { navigate('/programs'); window.scrollTo(0, 0); }}>Programs</li>
-              <li onClick={() => { navigate('/gallery'); window.scrollTo(0, 0); }}>Gallery</li>
-              <li onClick={() => { navigate('/contactus'); window.scrollTo(0, 0); }}>Contact Us</li>
-            </ul>
-          </div>
+          {/* WRAPPER FOR SIDE-BY-SIDE MOBILE LAYOUT (Quick Links & Programs) */}
+          <div className="col-12 col-md-4 p-0">
+            <div className="row g-2">
+              
+              {/* COLUMN 2: QUICK LINKS (col-6 on mobile, side-by-side) */}
+              <div className="col-6 dashed-right-divider">
+                <h5 className="fw-bold text-dark mb-3" style={{ fontSize: '1.1rem' }}>Quick Links</h5>
+                <ul className="list-unstyled d-flex flex-column gap-2 fw-medium footer-links-list">
+                  <li onClick={() => { navigate('/'); window.scrollTo(0, 0); }}>Home</li>
+                  <li onClick={() => { navigate('/about'); window.scrollTo(0, 0); }}>About Us</li>
+                  <li onClick={() => { navigate('/programs'); window.scrollTo(0, 0); }}>Programs</li>
+                  <li onClick={() => { navigate('/gallery'); window.scrollTo(0, 0); }}>Gallery</li>
+                  <li onClick={() => { navigate('/contactus'); window.scrollTo(0, 0); }}>Contact Us</li>
+                </ul>
+              </div>
 
-          {/* COLUMN 3: OUR PROGRAMS */}
-          <div className="col-12 col-md-2 dashed-right-divider">
-            <h5 className="fw-bold text-dark mb-3" style={{ fontSize: '1.1rem' }}>Our Programs</h5>
-            <ul className="list-unstyled d-flex flex-column gap-2 fw-medium footer-links-list">
-              <li>Play Group</li>
-              <li>Nursery</li>
-              <li>KG Classes</li>
-              <li>Art & Craft</li>
-              <li>Music & Dance</li>
-            </ul>
+              {/* COLUMN 3: OUR PROGRAMS (col-6 on mobile, side-by-side) */}
+              <div className="col-6 dashed-right-divider">
+                <h5 className="fw-bold text-dark mb-3" style={{ fontSize: '1.1rem' }}>Our Programs</h5>
+                <ul className="list-unstyled d-flex flex-column gap-2 fw-medium footer-links-list">
+                  <li>Play Group</li>
+                  <li>Nursery</li>
+                  <li>KG Classes</li>
+                  <li>Art & Craft</li>
+                  <li>Music & Dance</li>
+                </ul>
+              </div>
+
+            </div>
           </div>
 
           {/* COLUMN 4: CONTACT US */}
@@ -102,24 +108,21 @@ export default function FooterSection() {
 
         </div>
 
-        {/* ==========================================================================
-           🆕 ATTRIBUTION BOTTOM BAR (Matches your image layout)
-           ========================================================================== */}
-        <div className="mt-5 pt-3 text-center footer-credits-border">
-  <p className="mb-1 text-muted fw-normal" style={{ fontSize: '0.9rem' }}>
-    Designed & Developed By
-  </p>
-  
-  <a 
-    href="https://wa.me/971509132555" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="mb-0 fw-bold text-dark d-inline-flex align-items-center" 
-    style={{ fontSize: '1.1rem', textDecoration: 'none', color: 'inherit' }}
-  >
-    Credo Digital Designs LLC SPC
-  </a>
-</div>
+        {/* ATTRIBUTION BOTTOM BAR */}
+        <div className="mt-4 pt-3 text-center footer-credits-border">
+          <p className="mb-1 text-muted fw-normal" style={{ fontSize: '0.9rem' }}>
+            Designed & Developed By
+          </p>
+          <a 
+            href="https://wa.me/971509132555" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="mb-0 fw-bold text-dark d-inline-flex align-items-center" 
+            style={{ fontSize: '1.1rem', textDecoration: 'none', color: 'inherit' }}
+          >
+            Credo Digital Designs LLC SPC
+          </a>
+        </div>
 
       </div>
     </footer> 
